@@ -1,0 +1,38 @@
+{
+  "name": "camunda-form-playground-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --open",
+    "dev": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda/form-playground.git",
+    "directory": "example"
+  },
+  "author": {
+    "name": "Niklas Kiefer",
+    "url": "https://github.com/pinussilvestrus"
+  },
+  "contributors": [
+    {
+      "name": "bpmn.io contributors",
+      "url": "https://github.com/bpmn-io"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@camunda/form-playground": "file:..",
+    "@ibm/plex": "^6.1.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.0"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "@camunda/form-playground",
+  "version": "0.0.0",
+  "description": "Camunda Form Playground.",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "all": "run-s lint test build",
+    "test": "karma start",
+    "build": "rollup -c",
+    "build:watch": "rollup -cw",
+    "lint": "eslint src",
+    "start": "cd example && npm start",
+    "dev": "npm test -- --auto-watch --no-single-run",
+    "prepare": "run-s build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda/form-playground.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "camunda",
+    "form-js",
+    "form-js-playground"
+  ],
+  "author": {
+    "name": "Niklas Kiefer",
+    "url": "https://github.com/pinussilvestrus"
+  },
+  "contributors": [
+    {
+      "name": "bpmn.io contributors",
+      "url": "https://github.com/bpmn-io"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "chai": "^4.3.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.22.0",
+    "eslint-plugin-bpmn-io": "^0.14.1",
+    "karma": "^6.4.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-debug-launcher": "^0.0.5",
+    "karma-env-preprocessor": "^0.1.1",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-mocha": "^2.0.1",
+    "karma-sinon-chai": "^2.0.2",
+    "karma-webpack": "^5.0.0",
+    "mocha": "^10.0.0",
+    "mocha-test-container-support": "^0.2.0",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^14.0.0",
+    "rollup": "^2.78.1",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "sinon": "^14.0.0",
+    "sinon-chai": "^3.7.0",
+    "webpack": "^5.74.0"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "dependencies": {
+    "@bpmn-io/form-js": "^0.8.0-alpha.1",
+    "htm": "^3.1.1",
+    "preact": "^10.10.6"
+  }
+}
