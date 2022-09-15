@@ -1,0 +1,87 @@
+.cfp-root {
+  --collapsible-border-color: var(--color-grey-225-10-85);
+  --collapsible-title-background-color: var(--color-grey-225-10-95);
+  --collapsible-action-fill-color: var(--color-grey-225-10-35);
+  --collapsible-title-hover-action-background-color: var(--color-grey-225-10-85);
+  --collapsible-action-hover-background-color: var(--color-grey-225-10-80);
+}
+
+.cfp-collapsible-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-top: solid 1px var(--collapsible-border-color);
+}
+
+.cfp-collapsible-panel .cfp-collapsible-panel-title {
+  cursor: var(--collapsible-cursor);
+  background: var(--collapsible-title-background-color);
+  border-bottom: solid 1px var(--collapsible-border-color);
+  display: flex;
+  position: relative;
+  user-select: none;
+}
+
+.cfp-collapsible-panel .cfp-collapsible-panel-title h1 {
+  font-size: 12px;
+  margin: 0;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.cfp-collapsible-panel .cfp-collapsible-panel-title .cfp-actions {
+  border-left: 1px solid var(--collapsible-border-color);
+  padding-left: 2px;
+  position: absolute;
+  right: 4px;
+  top: 2px;
+}
+
+.cfp-collapsible-panel .cfp-collapsible-panel-content {
+  overflow: auto;
+}
+
+.cfp-collapsible-panel:not(.open) {
+  flex: none !important;
+}
+
+.cfp-collapsible-panel:not(.open) .cfp-collapsible-panel-content {
+  display: none;
+}
+
+.cfp-collapsible-panel:not(.open) .cfp-collapsible-panel-title {
+  border: none;
+}
+
+.cfp-collapsible-panel .cfp-collapsible-panel-actions {
+  padding-left: 2px;
+  position: absolute;
+  right: 4px;
+  top: 2px;
+}
+
+.cfp-collapsible-panel button.cfp-collapsible-panel-action {
+  cursor: var(--collapsible-cursor);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  height: 22px;
+  line-height: 22px;
+  min-width: 22px;
+  margin: 5px;
+  padding: 0 3px;
+  border: none;
+  background: none;
+  text-align: center;
+  fill: var(--collapsible-action-fill-color);
+  min-width: 22px;
+  border-radius: 11px;
+}
+
+.cfp-collapsible-panel .cfp-collapsible-panel-title:hover button.cfp-collapsible-panel-action {
+  background-color: var(--collapsible-title-hover-action-background-color);
+}
+
+.cfp-collapsible-panel button.cfp-collapsible-panel-action:hover {
+  background-color: var(--collapsible-action-hover-background-color) !important;
+}
