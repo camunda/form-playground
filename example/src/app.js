@@ -7,7 +7,10 @@ import schema from '../resources/form.json';
 import './style.css';
 
 
-const container = document.querySelector('.container');
+const container = document.querySelector('.playground');
+
+const designBtn = document.querySelector('.design');
+const validateBtn = document.querySelector('.validate');
 
 const data = {
   creditor: 'John Doe Company',
@@ -35,8 +38,51 @@ const data = {
   language: 'english'
 };
 
-new CamundaFormPlayground({
+let mode;
+
+const formPlayground = new CamundaFormPlayground({
   container,
   schema,
   data
 });
+
+setMode('design');
+
+formPlayground.on('formPlayground.layoutChanged', function(event) {
+  console.log('layout updated', event.layout);
+  setMode(isValidation(event.layout) ? 'validate' : 'design');
+});
+
+function setMode(value) {
+  mode = value;
+
+  if (mode === 'design') {
+    designBtn.classList.add('active');
+    validateBtn.classList.remove('active');
+  } else {
+    designBtn.classList.remove('active');
+    validateBtn.classList.add('active');
+  }
+}
+
+function triggerValidation() {
+  formPlayground.open();
+}
+
+function triggerDesign() {
+  formPlayground.collapse();
+}
+
+designBtn.addEventListener('click', triggerDesign);
+validateBtn.addEventListener('click', triggerValidation);
+
+
+// helper ///////////
+
+function isValidation(layout = {}) {
+  return (
+    (layout['form-preview'] || {}).open ||
+    (layout['form-input'] || {}).open ||
+    (layout['form-output'] || {}).open
+  );
+}
