@@ -6,7 +6,7 @@ jobs:
     strategy:
       matrix:
         os: [ macos-latest, ubuntu-latest, windows-latest ]
-        node-version: [ 14 ]
+        node-version: [ 16 ]
 
     runs-on: ${{ matrix.os }}
 
@@ -31,6 +31,7 @@ jobs:
     - name: Build
       if: matrix.os == 'ubuntu-latest'
       env:
+        COVERAGE: 1
         TEST_BROWSERS: Firefox,ChromeHeadless
       run: xvfb-run npm run all
     - name: Build
@@ -38,3 +39,5 @@ jobs:
       env:
         TEST_BROWSERS: ChromeHeadless
       run: npm run all
+    - name: Upload coverage
+      uses: codecov/codecov-action@v2
