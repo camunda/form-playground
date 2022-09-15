@@ -1,7 +1,9 @@
 const coverage = process.env.COVERAGE;
 
+const { DefinePlugin } = require('webpack');
+
 // configures browsers to run test against
-// any of [ 'ChromeHeadless', 'Chrome', 'Firefox', 'IE', 'PhantomJS' ]
+// any of [ 'ChromeHeadless', 'Chrome', 'Firefox' ]
 const browsers = (process.env.TEST_BROWSERS || 'ChromeHeadless').split(',');
 
 const singleStart = process.env.SINGLE_START;
@@ -62,9 +64,36 @@ module.exports = function(karma) {
               'style-loader',
               'css-loader'
             ]
+          },
+          {
+            test: /\.m?js$/,
+            exclude: /node_modules/,
+            use: {
+              loader: 'babel-loader',
+              options: {
+                plugins: [].concat(
+                  coverage ? [
+                    [
+                      'istanbul', {
+                        include: [
+                          'src/**'
+                        ]
+                      }
+                    ]
+                  ] : []
+                )
+              }
+            }
           }
         ]
       },
+      plugins: [
+        new DefinePlugin({
+
+          // @barmac: process.env has to be defined to make @testing-library/preact work
+          'process.env': {}
+        })
+      ],
       devtool: 'eval-source-map'
     }
   };

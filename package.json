@@ -13,9 +13,12 @@
     "build": "rollup -c",
     "build:watch": "rollup -cw",
     "lint": "eslint src",
-    "start": "cd example && npm start",
+    "start": "run-p build:watch start:example",
+    "start:example": "cd example && npm start",
     "dev": "npm test -- --auto-watch --no-single-run",
-    "prepare": "run-s build"
+    "prepare": "run-s build",
+    "prepublishOnly": "run-s build",
+    "link-deps": "node tasks/link-deps.js"
   },
   "repository": {
     "type": "git",
@@ -40,13 +43,30 @@
     }
   ],
   "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "htm": "^3.1.1",
+    "min-dash": "^3.8.1",
+    "min-dom": "^3.2.1",
+    "mitt": "^3.0.0",
+    "preact": "^10.10.6"
+  },
   "devDependencies": {
+    "@bpmn-io/form-js": "^0.9.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@testing-library/preact": "^2.0.1",
+    "@testing-library/preact-hooks": "^1.1.0",
+    "axe-core": "^4.4.3",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-istanbul": "^6.1.1",
     "chai": "^4.3.6",
     "cross-env": "^7.0.3",
+    "css-loader": "^6.7.1",
+    "del": "^3.0.0",
     "eslint": "^8.22.0",
     "eslint-plugin-bpmn-io": "^0.14.1",
+    "execa": "^1.0.0",
     "karma": "^6.4.0",
     "karma-chrome-launcher": "^3.1.1",
     "karma-coverage": "^2.2.0",
@@ -63,16 +83,16 @@
     "rollup": "^2.78.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-svg": "^2.0.0",
     "sinon": "^14.0.0",
     "sinon-chai": "^3.7.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.74.0"
+  },
+  "peerDependencies": {
+    "@bpmn-io/form-js": "^0.9.0"
   },
   "sideEffects": [
     "*.css"
-  ],
-  "dependencies": {
-    "@bpmn-io/form-js": "^0.8.0-alpha.1",
-    "htm": "^3.1.1",
-    "preact": "^10.10.6"
-  }
+  ]
 }

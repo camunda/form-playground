@@ -7,7 +7,7 @@ import pkg from './package.json';
 function pgl(plugins = []) {
   return [
     css({
-      output: 'assets/playground.css'
+      output: 'assets/camunda-form-playground.css'
     }),
     copy({
       targets: [
@@ -36,10 +36,14 @@ export default [
     ],
     plugins: pgl(),
     external: [
+      '@bpmn-io/form-js',
+      'classnames',
+      'htm/preact',
+      'min-dash',
+      'min-dom',
+      'mitt',
       'preact',
-      'preact/hooks',
-      'htm',
-      '@bpmn-io/form-js'
+      'preact/hooks'
     ]
   }
 ];
