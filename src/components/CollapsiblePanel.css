@@ -38,6 +38,11 @@
 
 .cfp-collapsible-panel .cfp-collapsible-panel-content {
   overflow: auto;
+  height: 100%;
+}
+
+.cfp-collapsible-panel .cfp-collapsible-panel-content > div {
+  height: 100%;
 }
 
 .cfp-collapsible-panel:not(.open) {

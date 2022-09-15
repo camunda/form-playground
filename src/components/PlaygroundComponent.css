@@ -1,0 +1,165 @@
+.cfp-root {
+  --color-grey-225-10-15: hsl(225, 10%, 15%);
+  --color-grey-225-10-35: hsl(225, 10%, 35%);
+  --color-grey-225-10-55: hsl(225, 10%, 55%);
+  --color-grey-225-10-75: hsl(225, 10%, 75%);
+  --color-grey-225-10-80: hsl(225, 10%, 80%);
+  --color-grey-225-10-85: hsl(225, 10%, 85%);
+  --color-grey-225-10-90: hsl(225, 10%, 90%);
+  --color-grey-225-10-95: hsl(225, 10%, 95%);
+  --color-grey-225-10-97: hsl(225, 10%, 97%);
+
+  --color-blue-205-100-45: hsl(205, 100%, 45%);
+  --color-blue-205-100-50: hsl(205, 100%, 50%);
+  --color-blue-205-100-80: hsl(205, 100%, 80%);
+  --color-blue-205-100-95: hsl(205, 100%, 95%);
+
+  --color-green-150-86-44: hsl(150, 86%, 44%);
+
+  --color-red-360-100-40: hsl(360, 100%, 40%);
+  --color-red-360-100-45: hsl(360, 100%, 45%);
+  --color-red-360-100-92: hsl(360, 100%, 92%);
+  --color-red-360-100-97: hsl(360, 100%, 97%);
+
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+
+  --border-color: var(--color-grey-225-10-85);
+  --background-color: var(--color-grey-225-10-95);
+  --palette-background-color: var(--color-grey-225-10-97);
+  --properties-background-color: var(--color-grey-225-10-97);
+  --properties-group-background-color: var(--color-grey-225-10-97);
+  --properties-input-background-color: var(--color-white);
+  --properties-arrow-hover-background-color: var(--color-grey-225-10-90);
+  --container-background-color: var(--color-white);
+  --cm-background-color: var(--color-white);
+
+  --form-container-max-width: 1200px;
+  --collapsible-cursor: default;
+}
+
+.cfp-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.cfp-root {
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  flex: 1;
+  background-color: var(--background-color);
+}
+
+.cfp-root .cfp-left,
+.cfp-root .cfp-right {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-right: solid 1px var(--border-color);
+  border-left: solid 1px var(--border-color);
+}
+
+.cfp-root.cfp-open-preview .cfp-left {
+  margin-right: 6px;
+}
+
+.cfp-root:not(.cfp-open-preview) .cfp-right {
+  flex: none;
+  width: 35px;
+  border-left: none;
+}
+
+.cfp-root .cfp-editor-container,
+.cfp-root .cfp-data-container,
+.cfp-root .cfp-preview-container,
+.cfp-root .cfp-result-container {
+  overflow: auto;
+  background-color: var(--container-background-color);
+}
+
+.cfp-root [data-idx="form-definition"] {
+  border-top: none;
+  flex: 2;
+}
+
+.cfp-root [data-idx="form-definition"] .cfp-collapsible-panel-title {
+  cursor: default;
+}
+
+.cfp-root [data-idx="form-input"] {
+  flex: 1;
+}
+
+.cfp-root:not(.cfp-open-preview) [data-idx="form-input"] {
+  display: none;
+}
+
+.cfp-root [data-idx="form-preview"] {
+  border-top: none;
+  flex: 2;
+}
+
+.cfp-root [data-idx="form-output"] {
+  flex: 1;
+}
+
+.cfp-root .fjs-container {
+  max-width: var(--form-container-max-width);
+  margin: auto;
+}
+
+.cfp-root .cm-editor {
+  background-color: var(--cm-background-color);
+  height: 100%;
+}
+
+.cfp-root .cfp-palette {
+  background-color: var(--palette-background-color);
+  overflow: auto;
+}
+
+.cfp-root .cfp-palette .fjs-palette-container {
+  border-right: none;
+  width: auto;
+}
+
+.cfp-root .cfp-palette .fjs-hide-compact {
+  display: none;
+}
+
+.cfp-root .cfp-palette .fjs-palette-field {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cfp-root .cfp-palette .fjs-palette-field-icon {
+  margin: 0;
+}
+
+.cfp-root .cfp-palette .fjs-palette-header {
+  text-align: center;
+}
+
+.cfp-root .cfp-properties {
+  position: relative;
+  display: flex;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.cfp-root .cfp-properties .fjs-properties-container {
+  --properties-panel-width: 300px;
+  --color-properties-container-background: var(--properties-background-color);
+  border-left: none !important;
+}
+
+.cfp-root .cfp-properties .bio-properties-panel {
+  --input-background-color: var(--properties-input-background-color);
+  --group-background-color: var(--properties-group-background-color);
+  --arrow-hover-background-color: var(--properties-arrow-hover-background-color);
+}
