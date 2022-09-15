@@ -1,0 +1,221 @@
+import 'preact/debug';
+
+import TestContainer from 'mocha-test-container-support';
+
+import { fireEvent } from '@testing-library/preact';
+
+import {
+  render
+} from '@testing-library/preact/pure';
+
+import { html } from 'htm/preact';
+
+import {
+  classes as domClasses,
+  query as domQuery
+} from 'min-dom';
+
+import { LayoutContext } from '../../../src/context/LayoutContext';
+
+import { CollapsiblePanel } from '../../../src/components/CollapsiblePanel';
+
+import {
+  expectNoViolations
+} from '../../TestHelper';
+
+const noop = () => {};
+
+
+describe('components/CollapsiblePanel', function() {
+
+  let container;
+
+  beforeEach(function() {
+    container = TestContainer.get(this);
+  });
+
+
+  it('should render', function() {
+
+    // given
+    const result = createCollapsiblePanel({ container });
+
+    // then
+    expect(domQuery('.cfp-collapsible-panel', result.container)).to.exist;
+  });
+
+
+  describe('open', function() {
+
+    it('should allow initial configuration', async function() {
+
+      // given
+      const result = createCollapsiblePanel({ container, title: 'Panel', open: true });
+
+      const collapsiblePanel = domQuery('.cfp-collapsible-panel', result.container);
+
+      // then
+      expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+    });
+
+
+    it('should toggle open - title', async function() {
+
+      // given
+      const result = createCollapsiblePanel({ container, title: 'Panel' });
+
+      const collapsiblePanel = domQuery('.cfp-collapsible-panel', result.container);
+
+      const title = domQuery('.cfp-collapsible-panel-title', collapsiblePanel);
+
+      // assume
+      expect(domClasses(collapsiblePanel).has('open')).to.be.false;
+
+      // when
+      await fireEvent.click(title);
+
+      // then
+      expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+    });
+
+
+    it('should toggle close - title', async function() {
+
+      // given
+      const result = createCollapsiblePanel({ container, title: 'Panel', open: true });
+
+      const collapsiblePanel = domQuery('.cfp-collapsible-panel', result.container);
+
+      const title = domQuery('.cfp-collapsible-panel-title', collapsiblePanel);
+
+      // assume
+      expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+
+      // when
+      await fireEvent.click(title);
+
+      // then
+      expect(domClasses(collapsiblePanel).has('open')).to.be.false;
+    });
+
+
+    it('should toggle open - action', async function() {
+
+      // given
+      const result = createCollapsiblePanel({ container, title: 'Panel' });
+
+      const collapsiblePanel = domQuery('.cfp-collapsible-panel', result.container);
+
+      const action = domQuery('.cfp-collapsible-panel-action', collapsiblePanel);
+
+      // assume
+      expect(domClasses(collapsiblePanel).has('open')).to.be.false;
+
+      // when
+      await fireEvent.click(action);
+
+      // then
+      expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+    });
+
+
+    it('should toggle close - action', async function() {
+
+      // given
+      const result = createCollapsiblePanel({ container, title: 'Panel', open: true });
+
+      const collapsiblePanel = domQuery('.cfp-collapsible-panel', result.container);
+
+      const action = domQuery('.cfp-collapsible-panel-action', collapsiblePanel);
+
+      // assume
+      expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+
+      // when
+      await fireEvent.click(action);
+
+      // then
+      expect(domClasses(collapsiblePanel).has('open')).to.be.false;
+    });
+
+
+    it('should NOT toggle - no collapse config', async function() {
+
+      // given
+      const result = createCollapsiblePanel({ container, title: 'Panel', collapseTo: false });
+
+      const collapsiblePanel = domQuery('.cfp-collapsible-panel', result.container);
+
+      const title = domQuery('.cfp-collapsible-panel-title', collapsiblePanel);
+
+      // assume
+      expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+
+      // when
+      await fireEvent.click(title);
+
+      // then
+      expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+    });
+
+  });
+
+
+  describe('a11y', function() {
+
+    it('should have no violations', async function() {
+
+      // given
+      this.timeout(5000);
+
+      const { container: node } = createCollapsiblePanel({
+        container,
+        title: 'Panel',
+        open: true
+      });
+
+      // then
+      await expectNoViolations(node);
+    });
+
+  });
+
+});
+
+
+// helper //////////////
+
+function createCollapsiblePanel(options = {}) {
+  const {
+    container,
+    collapseTo = 'bottom',
+    ...restOptions
+  } = options;
+
+  const MockLayout = createLayout();
+
+  return render(html`
+    <${MockLayout}>
+      <${CollapsiblePanel} collapseTo=${collapseTo} ...${ restOptions } />
+    </${MockLayout}>`,
+  {
+    container
+  }
+  );
+}
+
+function createLayout(props = {}) {
+  const {
+    layout = {},
+    getLayoutForKey = (key, defaultValue) => defaultValue,
+    setLayoutForKey = noop
+  } = props;
+
+  const context = {
+    layout,
+    getLayoutForKey,
+    setLayoutForKey
+  };
+
+  return ({ children }) => html`<${LayoutContext.Provider} value=${ context }>${children}</${LayoutContext.Provider}>`;
+}
