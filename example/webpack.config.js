@@ -6,6 +6,7 @@ const mode = process.env.NODE_ENV || 'development';
 
 module.exports = {
   mode,
+  watch: mode === 'development',
   entry: './src/app.js',
   output: {
     path: path.join(__dirname, 'public'),

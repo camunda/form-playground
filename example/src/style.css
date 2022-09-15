@@ -1,19 +1,160 @@
 :root {
+  --color-grey-225-10-15: hsl(225, 10%, 15%); /* text */
+  --color-grey-225-10-35: hsl(225, 10%, 35%); /* icons */
+  --color-grey-225-10-55: hsl(225, 10%, 55%);
+  --color-grey-225-10-75: hsl(225, 10%, 75%); /* lines */
+  --color-grey-225-10-80: hsl(225, 10%, 80%); /* hover on grey bg */
+  --color-grey-225-10-85: hsl(225, 10%, 85%); /* app window */
+  --color-grey-225-10-90: hsl(225, 10%, 90%); /* button hover */
+  --color-grey-225-10-95: hsl(225, 10%, 95%); /* backgrounds, hover */
+  --color-grey-225-10-97: hsl(225, 10%, 97%); /* form element backgrounds */
+
+  --color-blue-205-100-45: hsl(205, 100%, 45%); /* primary hover */
+  --color-blue-205-100-50: hsl(205, 100%, 50%); /* primary */
+  --color-blue-205-100-95: hsl(205, 100%, 95%);
+
+  --color-green-150-86-44: hsl(150, 86%, 44%); /* success */
+
+  --color-red-360-100-40: hsl(360, 100%, 40%); /* warning hover */
+  --color-red-360-100-45: hsl(360, 100%, 45%); /* warning */
+  --color-red-360-100-92: hsl(360, 100%, 92%); /* hover */
+  --color-red-360-100-97: hsl(360, 100%, 97%); /* backgrounds */
+
+  --color-orange-20-98-52: hsl(20, 98%, 52%); /* new badges */
+
+  --color-white: hsl(0, 0%, 100%);
+  --color-white-opacity-80: hsla(0, 0%, 100%, 80%);
+  --color-black: hsl(0, 0%, 0%); 
+  --color-black-opacity-10: hsla(0, 0%, 0%, 10%); 
+  --color-black-opacity-30: hsla(0, 0%, 0%, 30%);
+}
+
+:root {
   --font-family: 'IBM Plex Sans', system-ui, Arial, sans-serif;
   --font-family-monospace: 'IBM Plex Mono', monospace;
   --font-size-default: 14px;
 }
 
-html, body, .container {
+* {
+  box-sizing: border-box;
+}
+
+html, body, .root {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 
   font-family: var(--font-family);
   font-size: var(--font-size-default);
 }
 
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.playground {
+  height: 80%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
 .bio-properties-panel {
   --font-family: var(--font-family);
+}
+
+.status-bar {
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  flex: none;
+  z-index: 1000;
+  height: 32px;
+  padding: 0;
+  background-color: var(--color-grey-225-10-85);
+  border-top: 1px solid var(--color-grey-225-10-75);
+  color: var(--color-grey-225-10-15);
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.status-bar .execution-platform {
+  margin-top: 2px;
+}
+
+.status-bar .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-bar .buttons + .buttons {
+  margin: 0 auto;
+}
+
+.status-bar .buttons + .buttons + .buttons {
+  margin: 0;
+}
+
+.status-bar .buttons > * {
+  padding: 0 10px;
+  user-select: none;
+  height: 100%;
+}
+
+.status-bar button {
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background-color: inherit;
+  font-weight: normal;
+  font-size: inherit;
+  font-family: inherit;
+  justify-content: center;
+  display: flex;
+  flex-flow: row;
+}
+
+.status-bar button.has-errors {
+  color: var(--color-red-360-100-45);
+}
+
+.status-bar button svg {
+  fill: currentColor;
+  margin-right: 2px;
+  margin-left: -5px;
+  width: 24px;
+  height: 24px;
+}
+
+.status-bar button img {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.status-bar button.has-errors svg {
+  fill: var(--color-red-360-100-45);
+}
+
+.status-bar button.design svg,
+.status-bar button.validate svg {
+  transform: scale(0.7);
+}
+
+.status-bar button:hover {
+  background-color: var(--color-grey-225-10-80);
+}
+
+.status-bar button.active {
+  background-color: var(--color-grey-225-10-75);
+}
+
+.status-bar button.active:hover {
+  background-color: var(--color-grey-225-10-75);
 }
