@@ -1,0 +1,71 @@
+.cfp-root {
+  --collapsed-preview-background-color: var(--color-grey-225-10-95);
+  --collapsed-preview-action-fill-color: var(--color-grey-225-10-35);
+  --collapsed-preview-hover-action-background-color: var(--color-grey-225-10-85);
+  --collapsed-preview-action-hover-background-color: var(--color-grey-225-10-80);
+  --collapsed-preview-cursor: var(--collapsible-cursor);
+}
+
+.cfp-collapsed-preview {
+  cursor: var(--collapsed-preview-cursor);
+  height: 100%;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  background: var(--collapsed-preview-background-color);
+  display: flex;
+  position: relative;
+}
+
+.cfp-collapsed-preview .cfp-collapsed-preview-title {
+  height: 100%;
+  user-select: none;
+}
+
+.cfp-collapsed-preview-title h1 {
+  font-size: 12px;
+  margin: 0;
+  margin-right: 2px;
+  padding: 10px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+
+.cfp-collapsed-preview .cfp-collapsed-preview-actions {
+  padding-left: 2px;
+  position: absolute;
+  right: 1px;
+  bottom: 2px;
+}
+
+.cfp-collapsed-preview button.cfp-collapsed-preview-action {
+  cursor: var(--collapsed-preview-cursor);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  height: 22px;
+  line-height: 22px;
+  min-width: 22px;
+  margin: 5px;
+  padding: 0 3px;
+  border: none;
+  background: none;
+  text-align: center;
+  fill: var(--collapsed-preview-action-fill-color);
+  min-width: 22px;
+  border-radius: 11px;
+}
+
+.cfp-collapsed-preview:hover button.cfp-collapsed-preview-action {
+  background-color: var(--collapsed-preview-hover-action-background-color);
+}
+
+.cfp-collapsed-preview button.cfp-collapsed-preview-action:hover {
+  background-color: var(--collapsed-preview-action-hover-background-color) !important;
+}
