@@ -43,7 +43,6 @@ For proper styling include the necessary stylesheets, and font used:
 <link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/form-js-editor.css">
 <link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/dragula.css">
 <link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/properties-panel.css">
-<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/form-js-playground.css">
 <link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/camunda-form-playground.css">
 ```
 
