@@ -178,14 +178,14 @@ export function PlaygroundComponent(props) {
   // (4) provide toggle API
 
   /**
-   * @param {String|Array<String>} containers
+   * @param {string|Array<string>} [containers]
    */
   this.open = function(containers) {
     setContainersLayout(containers, true);
   };
 
   /**
-   * @param {String|Array<String>} containers
+   * @param {string|Array<string>} [containers]
    */
   this.collapse = function(containers) {
     return setContainersLayout(containers, false);
