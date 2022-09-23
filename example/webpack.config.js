@@ -24,8 +24,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: '*.html', context: 'src', to: '.' },
-        { from: '@camunda/form-playground/dist/assets/**/*', context: 'node_modules', to: './vendor' },
-        { from: '@ibm/plex/{css/ibm-plex.min.css,IBM-Plex-Sans/fonts/{complete,split}/woff2/**}', context: 'node_modules', to: './vendor' }
+        { from: 'assets/**/*', context: '../dist' },
+        { from: '@ibm/plex/{css/ibm-plex.min.css,IBM-Plex-Sans/fonts/{complete,split}/woff2/**}', context: '../node_modules', to: './vendor' }
 
       ],
     }),

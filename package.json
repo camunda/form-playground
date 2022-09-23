@@ -14,7 +14,7 @@
     "build:watch": "rollup -cw",
     "lint": "eslint src",
     "start": "run-p build:watch start:example",
-    "start:example": "cd example && npm start",
+    "start:example": "npm start --workspace=example",
     "dev": "npm test -- --auto-watch --no-single-run",
     "prepare": "run-s build",
     "prepublishOnly": "run-s build",
@@ -24,6 +24,9 @@
     "type": "git",
     "url": "git+https://github.com/camunda/form-playground.git"
   },
+  "workspaces": [
+    "example"
+  ],
   "publishConfig": {
     "access": "public"
   },
