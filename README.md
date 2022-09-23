@@ -77,7 +77,7 @@ const formPlayground = new CamundaFormPlayground({
 });
 ```
 
-### `CamundaFormPlayground#open(containers: String[]) => void`
+### `CamundaFormPlayground#open(containers?: string[]) => void`
 
 Open all or specific playground containers.
 
@@ -89,7 +89,7 @@ formPlayground.open();
 formPlayground.open([ 'form-preview' ]);
 ```
 
-### `CamundaFormPlayground#collapse(containers: String[]) => void`
+### `CamundaFormPlayground#collapse(containers?: string[]) => void`
 
 Collapse all or specific playground containers.
 

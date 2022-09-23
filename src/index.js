@@ -16,7 +16,7 @@ import { PlaygroundComponent } from './components/PlaygroundComponent';
  * @typedef { {
  *  container?: Element,
  *  data: any,
- *  exporter?: { name: String, version: String },
+ *  exporter?: { name: string, version: string },
  *  layout?: any,
  *  schema: any
  * } } CamundaFormPlaygroundOptions
@@ -97,14 +97,14 @@ export function CamundaFormPlayground(options) {
   });
 
   /**
-   * @param {String|Array<String>} containers
+   * @param {string|Array<string>} [containers]
    */
   this.open = safeRef(function(containers) {
     return playgroundRef.open(containers);
   });
 
   /**
-   * @param {String|Array<String>} containers
+   * @param {string|Array<string>} [containers]
    */
   this.collapse = safeRef(function(containers) {
     return playgroundRef.collapse(containers);
