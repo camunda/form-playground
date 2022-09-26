@@ -106,7 +106,7 @@ describe('components/PlaygroundComponent', function() {
 
     // then
     expect(isOpen(getPanel('form-definition', result.container))).to.be.true;
-    expect(getPanel('form-preview', result.container)).to.not.exist;
+    expect(isOpen(getPanel('form-preview', result.container))).to.be.false;
     expect(domQuery('.cfp-collapsed-preview', result.container)).to.exist;
     expect(isOpen(getPanel('form-input', result.container))).to.be.false;
     expect(isOpen(getPanel('form-output', result.container))).to.be.false;
