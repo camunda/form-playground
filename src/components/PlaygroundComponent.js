@@ -160,6 +160,8 @@ export function PlaygroundComponent(props) {
       playground.attachPaletteContainer(paletteContainerRef.current);
       playground.attachEditorContainer(editorContainerRef.current);
       playground.attachDataContainer(dataContainerRef.current);
+      playground.attachPreviewContainer(previewContainerRef.current);
+      playground.attachResultContainer(resultContainerRef.current);
       playground.attachPropertiesPanelContainer(propertiesContainerRef.current);
     }
 
@@ -167,13 +169,6 @@ export function PlaygroundComponent(props) {
 
     return () => playground.off('formPlayground.rendered', attachComponents);
   }, []);
-
-  useEffect(() => {
-    if (previewOpen) {
-      playgroundRef.current.attachPreviewContainer(previewContainerRef.current);
-      playgroundRef.current.attachResultContainer(resultContainerRef.current);
-    }
-  }, [ previewOpen ]);
 
   // (4) provide toggle API
 

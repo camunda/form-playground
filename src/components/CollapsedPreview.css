@@ -10,11 +10,14 @@
   cursor: var(--collapsed-preview-cursor);
   height: 100%;
   flex: none;
-  display: flex;
+  display: none;
   flex-direction: column;
   background: var(--collapsed-preview-background-color);
-  display: flex;
   position: relative;
+}
+
+.cfp-collapsed-preview.visible {
+  display: flex;
 }
 
 .cfp-collapsed-preview .cfp-collapsed-preview-title {

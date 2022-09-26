@@ -99,6 +99,14 @@
   display: none;
 }
 
+.cfp-root:not(.cfp-open-preview) [data-idx="form-preview"] {
+  display: none;
+}
+
+.cfp-root:not(.cfp-open-preview) [data-idx="form-output"] {
+  display: none;
+}
+
 .cfp-root [data-idx="form-preview"] {
   border-top: none;
   flex: 2;
