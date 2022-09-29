@@ -66,15 +66,24 @@ function setMode(value) {
 }
 
 function triggerValidation() {
+  setMode('validate');
   formPlayground.open();
 }
 
 function triggerDesign() {
+  setMode('design');
   formPlayground.collapse();
 }
 
 designBtn.addEventListener('click', triggerDesign);
 validateBtn.addEventListener('click', triggerValidation);
+
+document.body.addEventListener('keydown', function(event) {
+  if (event.code === 'KeyP' && (event.metaKey || event.ctrlKey)) {
+    event.preventDefault();
+    mode === 'design' ? triggerValidation() : triggerDesign();
+  }
+});
 
 
 // helper ///////////
