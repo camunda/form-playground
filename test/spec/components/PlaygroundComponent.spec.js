@@ -5,6 +5,7 @@ import TestContainer from 'mocha-test-container-support';
 import mitt from 'mitt';
 
 import {
+  fireEvent,
   render,
   waitFor
 } from '@testing-library/preact/pure';
@@ -65,14 +66,10 @@ describe('components/PlaygroundComponent', function() {
   });
 
 
-  it('should open containers (validate)', async function() {
+  it('#open', async function() {
 
     // given
     const onInit = (playground) => {
-
-      // skip proper attachments
-      playground._ref.attachPreviewContainer = noop;
-      playground._ref.attachResultContainer = noop;
       playground.open();
     };
     let result;
@@ -88,14 +85,10 @@ describe('components/PlaygroundComponent', function() {
   });
 
 
-  it('should collapse containers (design)', async function() {
+  it('#collapse', async function() {
 
     // given
     const onInit = (playground) => {
-
-      // skip proper attachments
-      playground._ref.attachPreviewContainer = noop;
-      playground._ref.attachResultContainer = noop;
       playground.open();
       playground.collapse();
     };
@@ -151,6 +144,77 @@ describe('components/PlaygroundComponent', function() {
     expect(inputSpy).to.have.been.called;
     expect(outputSpy).to.have.been.called;
     expect(propertiesPanelSpy).to.have.been.called;
+  });
+
+
+  describe('integration', function() {
+
+    it('should toggle input', async function() {
+
+      // given
+      let result;
+      await waitFor(() => {
+        result = createPlaygroundComponent({ container });
+      });
+
+      const inputPanel = getPanel('form-input', result.container);
+      const title = domQuery('.cfp-collapsible-panel-title', inputPanel);
+
+      // assume
+      expect(isOpen(inputPanel)).to.be.false;
+
+      // when
+      await fireEvent.click(title);
+
+      // then
+      expect(isOpen(inputPanel)).to.be.true;
+    });
+
+
+    it('should toggle preview', async function() {
+
+      // given
+      let result;
+      await waitFor(() => {
+        result = createPlaygroundComponent({ container });
+      });
+
+      const collapsedPreview = domQuery('.cfp-collapsed-preview', result.container);
+      const previewPanel = getPanel('form-input', result.container);
+      const title = domQuery('.cfp-collapsed-preview-title', collapsedPreview);
+
+      // assume
+      expect(isOpen(previewPanel)).to.be.false;
+
+      // when
+      await fireEvent.click(title);
+
+      // then
+      expect(isOpen(previewPanel)).to.be.true;
+    });
+
+
+    it('should toggle output', async function() {
+
+      // given
+      let result;
+      await waitFor(() => {
+        result = createPlaygroundComponent({ container });
+      });
+
+      const outputPanel = getPanel('form-output', result.container);
+      const title = domQuery('.cfp-collapsible-panel-title', outputPanel);
+
+      // assume
+      expect(isOpen(outputPanel)).to.be.false;
+
+      // when
+      await fireEvent.click(title);
+
+      // then
+      expect(isOpen(outputPanel)).to.be.true;
+    });
+
   });
 
 

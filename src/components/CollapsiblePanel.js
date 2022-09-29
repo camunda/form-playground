@@ -1,7 +1,5 @@
 import { html } from 'htm/preact';
 
-import { useLayoutState } from '../hooks/useLayoutState';
-
 import classNames from 'classnames';
 
 import './CollapsiblePanel.css';
@@ -14,16 +12,14 @@ export function CollapsiblePanel(props) {
     children,
     collapseTo,
     idx,
-    onToggle = noop,
-    open: shouldOpen,
+    onToggle,
+    open,
     title
   } = props;
 
-  const [ open, setOpen ] = useLayoutState([ idx, 'open' ], shouldOpen || false);
-
-  const toggle = () => {
-    setOpen(!open);
-    onToggle();
+  const toggle = (event) => {
+    event.stopPropagation();
+    onToggle(open);
   };
 
   return html`

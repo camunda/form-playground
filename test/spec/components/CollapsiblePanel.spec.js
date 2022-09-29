@@ -15,15 +15,11 @@ import {
   query as domQuery
 } from 'min-dom';
 
-import { LayoutContext } from '../../../src/context/LayoutContext';
-
 import { CollapsiblePanel } from '../../../src/components/CollapsiblePanel';
 
 import {
   expectNoViolations
 } from '../../TestHelper';
-
-const noop = () => {};
 
 
 describe('components/CollapsiblePanel', function() {
@@ -45,7 +41,7 @@ describe('components/CollapsiblePanel', function() {
   });
 
 
-  describe('open', function() {
+  describe('toggle', function() {
 
     it('should allow initial configuration', async function() {
 
@@ -56,6 +52,25 @@ describe('components/CollapsiblePanel', function() {
 
       // then
       expect(domClasses(collapsiblePanel).has('open')).to.be.true;
+    });
+
+
+    it('should call handler', async function() {
+
+      // given
+      const spy = sinon.spy();
+
+      const result = createCollapsiblePanel({ container, title: 'Panel', onToggle: spy });
+
+      const collapsiblePanel = domQuery('.cfp-collapsible-panel', result.container);
+
+      const title = domQuery('.cfp-collapsible-panel-title', collapsiblePanel);
+
+      // when
+      await fireEvent.click(title);
+
+      // then
+      expect(spy).to.have.been.called;
     });
 
 
@@ -189,33 +204,28 @@ function createCollapsiblePanel(options = {}) {
   const {
     container,
     collapseTo = 'bottom',
+    open,
     ...restOptions
   } = options;
 
-  const MockLayout = createLayout();
+  let toggleState = !!open;
+  let rerender;
+  const onToggle = options.onToggle || function() {
+    toggleState = !toggleState;
+    rerender(html`
+      <${CollapsiblePanel} open=${toggleState} collapseTo=${collapseTo} onToggle=${onToggle} ...${ restOptions } />
+    `);
+  };
 
-  return render(html`
-    <${MockLayout}>
-      <${CollapsiblePanel} collapseTo=${collapseTo} ...${ restOptions } />
-    </${MockLayout}>`,
+  const component = render(html`
+    <${CollapsiblePanel} open=${toggleState} collapseTo=${collapseTo} onToggle=${onToggle} ...${ restOptions } />
+    `,
   {
     container
   }
   );
-}
 
-function createLayout(props = {}) {
-  const {
-    layout = {},
-    getLayoutForKey = (key, defaultValue) => defaultValue,
-    setLayoutForKey = noop
-  } = props;
+  rerender = component.rerender;
 
-  const context = {
-    layout,
-    getLayoutForKey,
-    setLayoutForKey
-  };
-
-  return ({ children }) => html`<${LayoutContext.Provider} value=${ context }>${children}</${LayoutContext.Provider}>`;
+  return component;
 }

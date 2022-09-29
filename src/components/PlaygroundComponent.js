@@ -124,6 +124,16 @@ export function PlaygroundComponent(props) {
     setLayoutForKey
   };
 
+  const inputOpen = getLayoutForKey([ FORM_INPUT_IDX, 'open' ], false);
+  const toggleInput = () => {
+    inputOpen ? this.collapse([ FORM_INPUT_IDX ]) : this.open([ FORM_INPUT_IDX ]);
+  };
+
+  const outputOpen = getLayoutForKey([ FORM_OUTPUT_IDX, 'open' ], false);
+  const toggleOutput = () => {
+    outputOpen ? this.collapse([ FORM_OUTPUT_IDX ]) : this.open([ FORM_OUTPUT_IDX ]);
+  };
+
   const previewOpen = getLayoutForKey([ FORM_PREVIEW_IDX, 'open' ], false);
   const togglePreview = () => {
     previewOpen ? this.collapse() : this.open();
@@ -195,7 +205,7 @@ export function PlaygroundComponent(props) {
         <${CollapsiblePanel} idx="${ FORM_DEFINITION_IDX }" title="Form Definition">
           <div class="cfp-editor-container" ref=${ editorContainerRef }></div>
         </${CollapsiblePanel}>
-        <${CollapsiblePanel} idx="${ FORM_INPUT_IDX }" title="Form Input" collapseTo="bottom">
+        <${CollapsiblePanel} open=${inputOpen} idx="${ FORM_INPUT_IDX }" title="Form Input" collapseTo="bottom" onToggle=${toggleInput}>
           <div class="cfp-data-container" ref=${ dataContainerRef }></div>
         </${CollapsiblePanel}>
       </div>
@@ -206,7 +216,7 @@ export function PlaygroundComponent(props) {
           previewContainerRef=${ previewContainerRef }
           onTogglePreview="${ togglePreview }" 
         />
-        <${CollapsiblePanel} idx="${ FORM_OUTPUT_IDX }" title="Form Output" collapseTo="bottom">
+        <${CollapsiblePanel} open=${outputOpen} idx="${ FORM_OUTPUT_IDX }" title="Form Output" collapseTo="bottom" onToggle=${toggleOutput}>
           <div class="cfp-result-container" ref=${ resultContainerRef }></div>
         </${CollapsiblePanel}>
       </div>
