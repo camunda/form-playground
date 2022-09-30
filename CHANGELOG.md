@@ -8,4 +8,4 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.1.0
 
-* `FEAT`: initial release
+* `FEAT`: initial release :tada:

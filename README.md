@@ -1,5 +1,3 @@
-> :construction: Work in progress
-
 # @camunda/form-playground
 
 [![CI](https://github.com/camunda/form-playground/actions/workflows/CI.yml/badge.svg)](https://github.com/camunda/form-playground/actions/workflows/CI.yml)
