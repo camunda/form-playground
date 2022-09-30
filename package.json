@@ -55,7 +55,7 @@
     "preact": "^10.10.6"
   },
   "devDependencies": {
-    "@bpmn-io/form-js": "^0.9.1",
+    "@bpmn-io/form-js": "^0.9.3",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@testing-library/preact": "^2.0.1",
