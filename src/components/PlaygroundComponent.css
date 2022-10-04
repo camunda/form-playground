@@ -91,10 +91,6 @@
   cursor: default;
 }
 
-.cfp-root [data-idx="form-input"] {
-  flex: 1;
-}
-
 .cfp-root:not(.cfp-open-preview) [data-idx="form-input"] {
   display: none;
 }
@@ -102,10 +98,6 @@
 .cfp-root [data-idx="form-preview"] {
   border-top: none;
   flex: 2;
-}
-
-.cfp-root [data-idx="form-output"] {
-  flex: 1;
 }
 
 .cfp-root .fjs-container {

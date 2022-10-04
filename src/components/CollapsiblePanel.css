@@ -90,3 +90,16 @@
 .cfp-collapsible-panel button.cfp-collapsible-panel-action:hover {
   background-color: var(--collapsible-action-hover-background-color) !important;
 }
+
+.cfp-resizer {
+  cursor: ns-resize;
+  z-index: 11;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  height: 8px;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+}

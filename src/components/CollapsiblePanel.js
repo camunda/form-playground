@@ -1,10 +1,19 @@
 import { html } from 'htm/preact';
 
+import { useState, useRef } from 'preact/hooks';
+
 import classNames from 'classnames';
+
+import dragger from '../util/dragger';
 
 import './CollapsiblePanel.css';
 
 const noop = () => {};
+
+// todo(pinussilvestrus): make configurable
+const DEFAULT_HEIGHT = 350;
+const MIN_HEIGHT = 200;
+const MAX_HEIGHT = 700;
 
 
 export function CollapsiblePanel(props) {
@@ -14,12 +23,73 @@ export function CollapsiblePanel(props) {
     idx,
     onToggle,
     open,
+    resizable,
     title
   } = props;
+
+  const ref = useRef(null);
+
+  const [ height, setHeight ] = useState(DEFAULT_HEIGHT);
 
   const toggle = (event) => {
     event.stopPropagation();
     onToggle(open);
+  };
+
+  const handleResizeStart = (event) => {
+    const onDragStart = dragger(handleResize);
+
+    onDragStart(event);
+
+    this.context = {
+      startHeight: height
+    };
+  };
+
+  const handleResize = (_, delta) => {
+    const { y: dy } = delta;
+
+    if (dy === 0) {
+      return;
+    }
+
+    const { startHeight } = this.context;
+
+    const {
+      height,
+      open
+    } = getLayout(dy, startHeight);
+
+    console.log(height);
+
+    this.context = {
+      ...this.context,
+      height,
+      open
+    };
+
+    if (ref.current) {
+      ref.current.style.height = `${ height }px`;
+    }
+  };
+
+  const handleResizeEnd = () => {
+    const {
+      height,
+      open
+    } = this.context;
+
+    this.context = {};
+
+    setHeight(height);
+
+    // todo(pinussilvestrus): update layout
+    // changeLayout({
+    //   log: {
+    //     height,
+    //     open
+    //   }
+    // });
   };
 
   return html`
@@ -27,24 +97,39 @@ export function CollapsiblePanel(props) {
       data-idx="${ idx }" 
       class="${classNames('cfp-collapsible-panel', { open: !collapseTo || open })}"
     >
-      <div onClick="${ collapseTo ? toggle : noop }" class="cfp-collapsible-panel-title">
-        <h1>${ title }</h1>
+      ${open && resizable && html`
+        <div 
+          class="cfp-resizer"
+          onDragStart=${ handleResizeStart }
+          onDragEnd=${ handleResizeEnd }
+          draggable>
+        </div>
+      `}
 
-        ${ collapseTo && html`
-          <div class="cfp-collapsible-panel-actions">
-            <button 
-              title="${ open ? 'Close' : 'Open' } ${ title }"
-              class="cfp-collapsible-panel-action" 
-              onClick="${ toggle }"
-            >
-              ${getIcon(collapseTo, open)}
-            </button>
-          </div>
-        `}
-      </div>
+      <div 
+        ref=${ ref }
+        class="cfp-collapsible-container" 
+        style=${{ height: resizable ? height : '100%' }}
+      >
+        <div onClick="${ collapseTo ? toggle : noop }" class="cfp-collapsible-panel-title">
+          <h1>${ title }</h1>
 
-      <div class="cfp-collapsible-panel-content">
-        ${ children }
+          ${ collapseTo && html`
+            <div class="cfp-collapsible-panel-actions">
+              <button 
+                title="${ open ? 'Close' : 'Open' } ${ title }"
+                class="cfp-collapsible-panel-action" 
+                onClick="${ toggle }"
+              >
+                ${getIcon(collapseTo, open)}
+              </button>
+            </div>
+          `}
+        </div>
+
+        <div class="cfp-collapsible-panel-content">
+          ${ children }
+        </div>
       </div>
     </div>
   `;
@@ -73,4 +158,19 @@ function getIcon(collapseTo, open) {
         <path fill-rule="evenodd" d="M12.9494942,11.5 L11.5352806,12.9142136 L7.99974671,9.37867966 L4.4642128,12.9142136 L3.04999924,11.5 L7.99974671,6.55025253 L12.9494942,11.5 Z M3,6 L3,4 L13,4 L13,6 L3,6 Z"/>
       </svg>`;
   }
+}
+
+function getLayout(dy, initialHeight) {
+  let height = Math.min(initialHeight - dy, MAX_HEIGHT);
+
+  const open = height >= MIN_HEIGHT;
+
+  if (!open) {
+    height = DEFAULT_HEIGHT;
+  }
+
+  return {
+    height,
+    open
+  };
 }
