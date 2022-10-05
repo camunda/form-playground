@@ -126,10 +126,24 @@
 .cfp-root .cfp-palette .fjs-palette-container {
   border-right: none;
   width: auto;
+  height: 100%;
 }
 
 .cfp-root .cfp-palette .fjs-hide-compact {
   display: none;
+}
+
+.cfp-root .cfp-palette .fjs-palette {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cfp-root .cfp-palette .fjs-palette-fields {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .cfp-root .cfp-palette .fjs-palette-field {
