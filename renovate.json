@@ -7,6 +7,7 @@
   "packageRules": [
     {
       "matchPackagePatterns": [
+        "form-js.*",
         "@bpmn-io/form-js.*"
       ],
       "groupName": "modeling dependencies",
