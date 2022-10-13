@@ -113,6 +113,10 @@
   margin: auto;
 }
 
+.cfp-root .fjs-editor-container {
+  display: inherit;
+}
+
 .cfp-root .cm-editor {
   background-color: var(--cm-background-color);
   height: 100%;
