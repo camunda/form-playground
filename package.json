@@ -12,7 +12,7 @@
     "test": "karma start",
     "build": "rollup -c",
     "build:watch": "rollup -cw",
-    "lint": "eslint src",
+    "lint": "eslint .",
     "start": "run-p build:watch start:example",
     "start:example": "npm start --workspace=example",
     "dev": "npm test -- --auto-watch --no-single-run",
