@@ -122,6 +122,10 @@
   height: 100%;
 }
 
+.cfp-root .cm-editor .cm-scroller {
+  overflow: auto !important;
+}
+
 .cfp-root .cfp-palette {
   background-color: var(--palette-background-color);
   overflow: auto;
