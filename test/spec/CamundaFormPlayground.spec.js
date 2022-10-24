@@ -302,8 +302,11 @@ describe('CamundaFormPlayground', function() {
 
     [
       'collapse',
-      'getSchema',
+      'getDataEditor',
       'getEditor',
+      'getForm',
+      'getResultView',
+      'getSchema',
       'open',
       'saveSchema',
       'setSchema',

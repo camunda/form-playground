@@ -92,39 +92,31 @@ export function CamundaFormPlayground(options) {
     }
   };
 
-  this.get = safeRef(function(module, strict) {
-    return playgroundRef.get(module, strict);
-  });
+  this.get = safeRef((module, strict) => playgroundRef.get(module, strict));
 
   /**
    * @param {string|Array<string>} [containers]
    */
-  this.open = safeRef(function(containers) {
-    return playgroundRef.open(containers);
-  });
+  this.open = safeRef((containers) => playgroundRef.open(containers));
 
   /**
    * @param {string|Array<string>} [containers]
    */
-  this.collapse = safeRef(function(containers) {
-    return playgroundRef.collapse(containers);
-  });
+  this.collapse = safeRef((containers) => playgroundRef.collapse(containers));
 
-  this.setSchema = safeRef(function(schema) {
-    return playgroundRef.setSchema(schema);
-  });
+  this.setSchema = safeRef((schema) => playgroundRef.setSchema(schema));
 
-  this.getSchema = safeRef(function() {
-    return playgroundRef.getSchema();
-  });
+  this.getSchema = safeRef(() => playgroundRef.getSchema());
 
-  this.saveSchema = safeRef(function() {
-    return playgroundRef.saveSchema();
-  });
+  this.saveSchema = safeRef(() => playgroundRef.saveSchema());
 
-  this.getEditor = safeRef(function() {
-    return playgroundRef.getEditor();
-  });
+  this.getDataEditor = safeRef(() => playgroundRef.getDataEditor());
+
+  this.getEditor = safeRef(() => playgroundRef.getEditor());
+
+  this.getForm = safeRef((name, strict) => playgroundRef.getForm(name, strict));
+
+  this.getResultView = safeRef(() => playgroundRef.getResultView());
 
   this._onInit = function(_ref) {
     playgroundRef = _ref;
