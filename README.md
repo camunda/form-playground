@@ -109,6 +109,17 @@ const eventBus = formPlayground.get('eventBus');
 ```
 
 
+### `CamundaFormPlayground#getDataEditor() => JSONEditor`
+
+Get the embedded input data editor.
+
+```javascript
+const dataEditor = formPlayground.getDataEditor();
+
+const data = dataEditor.getValue();
+```
+
+
 ### `CamundaFormPlayground#getEditor() => FormEditor`
 
 Get the embedded form editor.
@@ -117,6 +128,30 @@ Get the embedded form editor.
 const editor = formPlayground.getEditor();
 
 editor.on('selection.changed', () => { ... });
+```
+
+
+### `CamundaFormPlayground#getForm() => Form`
+
+Get the embedded preview form.
+
+```javascript
+const form = formPlayground.getForm();
+
+form.on('submit', event => {
+  console.log('Form <submit>', event);
+});
+```
+
+
+### `CamundaFormPlayground#getResultView() => JSONEditor`
+
+Get the embedded output data view.
+
+```javascript
+const resultView = formPlayground.getResultView();
+
+const data = resultView.getValue();
 ```
 
 
