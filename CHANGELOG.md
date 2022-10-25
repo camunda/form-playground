@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.2.0
+
+* `FEAT`: add `#getDataEditor`, `#getForm`, and `#getResultView` ([#19](https://github.com/camunda/form-playground/issues/19))
+
 ## 0.1.2
 
 * `FIX`: set `display: none` for output and preview in design mode ([#17](https://github.com/camunda/form-playground/issues/17))
