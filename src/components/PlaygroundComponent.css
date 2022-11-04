@@ -82,6 +82,11 @@
   background-color: var(--container-background-color);
 }
 
+.cfp-root .cfp-data-container,
+.cfp-root .cfp-result-container {
+  position: relative;
+}
+
 .cfp-root [data-idx="form-definition"] {
   border-top: none;
   flex: 2;
@@ -122,6 +127,11 @@
 .cfp-root .cm-editor {
   background-color: var(--cm-background-color);
   height: 100%;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .cfp-root .cm-editor .cm-scroller {
