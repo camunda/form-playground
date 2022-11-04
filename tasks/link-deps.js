@@ -13,7 +13,7 @@ const dependenciesDir = path.join(__dirname, '.linked-dependencies');
 // todo(pinussilvestrus): remove once released
 const dependencies = [ {
   repo: 'bpmn-io/form-js',
-  ref: 'develop'
+  ref: '340-datetimepicker'
 } ];
 linkDependencies(dependencies);
 

@@ -5,6 +5,7 @@ import {
 import schema from '../resources/form.json';
 
 import './style.css';
+import './light-theme.css';
 
 
 const container = document.querySelector('.playground');
