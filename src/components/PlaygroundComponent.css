@@ -124,7 +124,7 @@
   display: inherit;
 }
 
-.cfp-root .cm-editor {
+.cfp-root .cfp-collapsible-panel .cm-editor {
   background-color: var(--cm-background-color);
   height: 100%;
   position: absolute !important;
@@ -134,7 +134,7 @@
   bottom: 0;
 }
 
-.cfp-root .cm-editor .cm-scroller {
+.cfp-root .cfp-collapsible-panel .cm-editor .cm-scroller {
   overflow: auto !important;
 }
 
