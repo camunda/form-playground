@@ -2,6 +2,8 @@ import {
   CamundaFormPlayground
 } from '@camunda/form-playground';
 
+import download from 'downloadjs';
+
 import schema from '../resources/form.json';
 
 import './style.css';
@@ -86,6 +88,16 @@ document.body.addEventListener('keydown', function(event) {
   }
 });
 
+document.body.addEventListener('keydown', function(event) {
+  if (event.code === 'KeyS' && event.shiftKey && (event.metaKey || event.ctrlKey)) {
+    event.preventDefault();
+
+    const schema = formPlayground.getEditor().getSchema();
+    fileDownload(JSON.stringify(schema, 0, 2), 'form.json', 'application/json');
+    console.log(JSON.stringify(schema, 0, 2));
+  }
+});
+
 
 // helper ///////////
 
@@ -94,5 +106,14 @@ function isValidation(layout = {}) {
     (layout['form-preview'] || {}).open ||
     (layout['form-input'] || {}).open ||
     (layout['form-output'] || {}).open
+  );
+}
+
+function fileDownload(content, fileName, mimeType) {
+
+  return download(
+    'data:' + mimeType + ';charset=UTF-8,' + encodeURIComponent(content),
+    fileName,
+    mimeType
   );
 }

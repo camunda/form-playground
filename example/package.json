@@ -29,7 +29,8 @@
   "dependencies": {
     "@bpmn-io/form-js": "^0.9.9",
     "@camunda/form-playground": "file:..",
-    "@ibm/plex": "^6.1.0"
+    "@ibm/plex": "^6.1.0",
+    "downloadjs": "^1.4.7"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
