@@ -118,6 +118,9 @@
 .cfp-root .fjs-container {
   max-width: var(--form-container-max-width);
   margin: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .cfp-root .fjs-editor-container {
