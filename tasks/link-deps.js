@@ -10,10 +10,12 @@ const customLinkersMap = {
 const demoDir = path.join(__dirname, '..');
 const dependenciesDir = path.join(__dirname, '.linked-dependencies');
 
+const formJsRef = process.env.FORM_JS_BRANCH || 'develop';
+
 // todo(pinussilvestrus): remove once released
 const dependencies = [ {
   repo: 'bpmn-io/form-js',
-  ref: 'develop'
+  ref: formJsRef
 } ];
 linkDependencies(dependencies);
 
