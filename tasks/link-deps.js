@@ -2,6 +2,7 @@ const fs = require('fs');
 const { shellSync: exec } = require('execa');
 const { sync: del } = require('del');
 const path = require('path');
+const qs = require('qs');
 
 const customLinkersMap = {
   'bpmn-io/form-js': linkFormJs
@@ -10,7 +11,9 @@ const customLinkersMap = {
 const demoDir = path.join(__dirname, '..');
 const dependenciesDir = path.join(__dirname, '.linked-dependencies');
 
-const formJsRef = process.env.FORM_JS_BRANCH || 'develop';
+const DEFAULT_BRANCH = 'develop';
+
+const formJsRef = getFormsBranch();
 
 // todo(pinussilvestrus): remove once released
 const dependencies = [ {
@@ -104,4 +107,12 @@ function gitClone(repo) {
 
 function getRepoUrl(repo) {
   return `https://github.com/${repo}.git`;
+}
+
+function getFormsBranch() {
+  return (
+    process.env.FORM_JS_BRANCH ||
+    process.env.INCOMING_HOOK_BODY && qs.parse(process.env.INCOMING_HOOK_BODY)['FORM_JS_BRANCH'] ||
+    DEFAULT_BRANCH
+  );
 }
