@@ -6,6 +6,12 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.2.1
+
+* `FIX`: fixed horizontal code editor scrolling ([`a5f661c9`](https://github.com/camunda/form-playground/commit/a5f661c9bad6353cba6677c3e75a872df210361e))
+* `FIX`: fixed editor drop area size ([`0a0aad85`](https://github.com/camunda/form-playground/commit/0a0aad852c50360006fdd9d234cd3375a7c657ed))
+* `FIX`: limit editor changes to panels ([`0efa0edc`](https://github.com/camunda/form-playground/commit/0efa0edcb4e4fe2087ab9919ac06823b33a8e17a))
+
 ## 0.2.0
 
 * `FEAT`: add `#getDataEditor`, `#getForm`, and `#getResultView` ([#19](https://github.com/camunda/form-playground/issues/19))
