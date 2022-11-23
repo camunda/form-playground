@@ -1,6 +1,6 @@
 {
   "name": "@camunda/form-playground",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Camunda Form Playground.",
   "files": [
     "dist"
