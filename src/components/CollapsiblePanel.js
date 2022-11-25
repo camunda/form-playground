@@ -1,4 +1,4 @@
-import { html } from 'htm/preact';
+import { html } from 'diagram-js/lib/ui';
 
 import classNames from 'classnames';
 

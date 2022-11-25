@@ -1,6 +1,6 @@
 import {
   createContext
-} from 'preact';
+} from 'diagram-js/lib/ui';
 
 export const LayoutContext = createContext({
   layout: {},

@@ -5,7 +5,7 @@ import {
 
 import {
   html
-} from 'htm/preact';
+} from 'diagram-js/lib/ui';
 
 import {
   get,

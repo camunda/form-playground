@@ -2,7 +2,7 @@ import {
   useContext,
   useEffect,
   useState
-} from 'preact/hooks';
+} from 'diagram-js/lib/ui';
 
 import {
   LayoutContext
