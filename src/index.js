@@ -62,6 +62,13 @@ export function CamundaFormPlayground(options) {
   this.off = emitter.off;
   this.fire = emitter.emit;
 
+  // added due to current limitation of <mitt.once>
+  // cf. https://github.com/developit/mitt/issues/136
+  this.once = function(type, fn) {
+    emitter.on(type, fn);
+    emitter.on(type, emitter.off.bind(emitter, type, fn));
+  };
+
   this.destroy = function() {
     const parent = container.parentNode;
     render(null, container);
@@ -145,16 +152,12 @@ export async function createCamundaFormPlayground(options) {
 
   return new Promise((resolve, reject) => {
 
-    // only listen once
-    // added due to current limitation of <mitt.once>
-    // cf. https://github.com/developit/mitt/issues/136
     const onInit = () => {
-      playground.off('formPlayground.init', onInit);
       return resolve(playground);
     };
 
     try {
-      playground.on('formPlayground.init', onInit);
+      playground.once('formPlayground.init', onInit);
     } catch (err) {
       return reject(err);
     }

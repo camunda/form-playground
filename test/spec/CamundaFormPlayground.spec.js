@@ -138,6 +138,30 @@ describe('CamundaFormPlayground', function() {
   });
 
 
+  it('#once', async function() {
+
+    // given
+    const spy = sinon.spy();
+
+    // when
+    await waitFor(async () => {
+      playground = await createCamundaFormPlayground({
+        container
+      });
+    });
+
+    // when
+    playground.once('formPlayground.rendered', spy);
+
+    playground.fire('formPlayground.rendered');
+    playground.fire('formPlayground.rendered');
+    playground.fire('formPlayground.rendered');
+
+    // then
+    expect(spy).to.have.been.calledOnce;
+  });
+
+
   describe('#attachTo', async function() {
 
     let parent;
