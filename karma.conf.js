@@ -50,11 +50,7 @@ module.exports = function(karma) {
         modules: [
           'node_modules',
           __dirname
-        ],
-        alias: {
-          'react': 'preact/compat',
-          'react-dom': 'preact/compat'
-        }
+        ]
       },
       module: {
         rules: [

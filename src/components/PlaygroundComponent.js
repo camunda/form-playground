@@ -1,10 +1,9 @@
 import {
+  html,
   useEffect,
   useRef,
   useState
-} from 'preact/hooks';
-
-import { html } from 'htm/preact';
+} from 'diagram-js/lib/ui';
 
 import {
   assign,

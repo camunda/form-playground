@@ -38,12 +38,10 @@ export default [
     external: [
       '@bpmn-io/form-js',
       'classnames',
-      'htm/preact',
       'min-dash',
       'min-dom',
       'mitt',
-      'preact',
-      'preact/hooks'
+      'diagram-js/lib/ui'
     ]
   }
 ];
