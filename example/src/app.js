@@ -43,7 +43,10 @@ let mode;
 const formPlayground = new CamundaFormPlayground({
   container,
   schema,
-  data
+  data,
+  editor: {
+    keyboard: { bindTo: document }
+  }
 });
 
 setMode('design');

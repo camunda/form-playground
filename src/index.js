@@ -17,6 +17,7 @@ import { PlaygroundComponent } from './components/PlaygroundComponent';
  *  container?: Element,
  *  data: any,
  *  exporter?: { name: string, version: string },
+ *  editor?: { keyboard: { bindTo: Element } }
  *  layout?: any,
  *  schema: any
  * } } CamundaFormPlaygroundOptions

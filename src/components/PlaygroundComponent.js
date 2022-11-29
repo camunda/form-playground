@@ -50,6 +50,7 @@ export function PlaygroundComponent(props) {
   const {
     data,
     emitter,
+    editor: editorConfig = {},
     layoutConfig = {},
     onInit,
     schema,
@@ -70,7 +71,10 @@ export function PlaygroundComponent(props) {
     playgroundRef.current = new FormPlayground({
       data,
       schema,
-      editor: { inlinePropertiesPanel: false },
+      editor: {
+        ...editorConfig,
+        inlinePropertiesPanel: false
+      },
       ...restProps
     });
   }, []);

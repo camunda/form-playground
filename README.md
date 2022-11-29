@@ -63,7 +63,7 @@ const formPlayground = await createFormPlayground({
 
 ### `CamundaFormPlayground`
 
-Create a new form playground with options `{ container?: HTMLElement, data: any, exporter?: { name: String, version: String }, layout?: any, schema: any }`.
+Create a new form playground with options `{ container?: HTMLElement, data: any, editor?: { keyboard: { bindTo: HTLElement } }, exporter?: { name: String, version: String }, layout?: any, schema: any }`.
 
 ```javascript
 import { CamundaFormPlayground } from '@camunda/form-playground';
