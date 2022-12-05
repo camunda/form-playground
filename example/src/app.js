@@ -79,7 +79,7 @@ designBtn.addEventListener('click', triggerDesign);
 validateBtn.addEventListener('click', triggerValidation);
 
 document.body.addEventListener('keydown', function(event) {
-  if (event.code === 'KeyP' && (event.metaKey || event.ctrlKey)) {
+  if (event.code === 'KeyP' && event.shiftKey && (event.metaKey || event.ctrlKey)) {
     event.preventDefault();
     mode === 'design' ? triggerValidation() : triggerDesign();
   }
