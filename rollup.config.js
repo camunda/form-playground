@@ -11,7 +11,7 @@ function pgl(plugins = []) {
     }),
     copy({
       targets: [
-        { src: 'node_modules/@bpmn-io/form-js/dist/assets/**/*.css', dest: 'dist/assets' }
+        { src: 'node_modules/@bpmn-io/form-js/dist/assets/**/*', dest: 'dist/assets' }
       ]
     }),
     ...plugins
