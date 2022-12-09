@@ -37,11 +37,12 @@ For proper styling include the necessary stylesheets, and font used:
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/form-js.css">
-<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/form-js-editor.css">
-<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/dragula.css">
-<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/properties-panel.css">
-<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.1.0/dist/assets/camunda-form-playground.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.3.0/dist/assets/form-js.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.3.0/dist/assets/flatpickr/light.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.3.0/dist/assets/form-js-editor.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.3.0/dist/assets/dragula.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.3.0/dist/assets/properties-panel.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda/form-playground@0.3.0/dist/assets/camunda-form-playground.css">
 ```
 
 ## API
