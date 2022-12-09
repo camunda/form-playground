@@ -36,6 +36,9 @@
 
   --form-container-max-width: 1200px;
   --collapsible-cursor: default;
+
+  --font-family: 'IBM Plex Sans', system-ui, Arial, sans-serif;
+  --font-family-monospace: 'IBM Plex Mono', monospace;
 }
 
 .cfp-container {
@@ -139,6 +142,7 @@
 
 .cfp-root .cfp-collapsible-panel .cm-editor .cm-scroller {
   overflow: auto !important;
+  font-family: var(--font-family-monospace);
 }
 
 .cfp-root .cfp-palette {

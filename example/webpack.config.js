@@ -25,8 +25,7 @@ module.exports = {
       patterns: [
         { from: '*.html', context: 'src', to: '.' },
         { from: 'assets/**/*', context: '../dist' },
-        { from: '@ibm/plex/{css/ibm-plex.min.css,IBM-Plex-Sans/fonts/{complete,split}/woff2/**}', context: '../node_modules', to: './vendor' }
-
+        { from: '@ibm/plex/{css/ibm-plex.min.css,{IBM-Plex-Sans,IBM-Plex-Mono}/fonts/{complete,split}/woff2/**}', context: '../node_modules', to: './vendor' },
       ],
     }),
   ],
