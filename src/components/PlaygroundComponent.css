@@ -33,9 +33,11 @@
   --properties-arrow-hover-background-color: var(--color-grey-225-10-90);
   --container-background-color: var(--color-white);
   --cm-background-color: var(--color-white);
+  --drag-container-border-color: var(--color-grey-225-10-80);
 
   --form-container-max-width: 1200px;
   --collapsible-cursor: default;
+  --drag-cursor: default;
 
   --font-family: 'IBM Plex Sans', system-ui, Arial, sans-serif;
   --font-family-monospace: 'IBM Plex Mono', monospace;
@@ -203,4 +205,23 @@
   --input-background-color: var(--properties-input-background-color);
   --group-background-color: var(--properties-group-background-color);
   --arrow-hover-background-color: var(--properties-arrow-hover-background-color);
+}
+
+/**
+ * Custom Dragula Styles
+ *
+ * @pinussilvestrus: remove me once this is fixed: https://github.com/bpmn-io/form-js/issues/462
+ */
+.cfp-root .fjs-children.fjs-drag-container {
+  border: 2px dashed transparent;
+}
+
+.gu-unselectable .cfp-root .fjs-children.fjs-drag-container {
+  cursor: var(--drag-cursor);
+}
+
+@media only screen and (min-width: 1650px) {
+  .gu-unselectable .cfp-root:not(.cfp-open-preview) .fjs-children.fjs-drag-container {
+    border: 2px dashed var(--drag-container-border-color);
+  }
 }
