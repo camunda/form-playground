@@ -11,7 +11,8 @@
         "@bpmn-io/form-js.*"
       ],
       "groupName": "modeling dependencies",
-      "groupSlug": "modeling"
+      "groupSlug": "modeling",
+      "automerge": false
     }
   ]
 }
