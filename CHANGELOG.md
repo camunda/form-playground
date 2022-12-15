@@ -6,6 +6,14 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.3.0
+
+* `FEAT`: expose `once` event handler ([`9433e9ac`](https://github.com/camunda/form-playground/commit/9433e9ace2b2302631b2806dcf7dc0f8a71581ef))
+* `FEAT`: integrate `diagram-js/ui/lib` ([#28](https://github.com/camunda/form-playground/issues/28))
+* `FIX`: correctly apply fonts ([`83a3a4fe`](https://github.com/camunda/form-playground/commit/83a3a4fede1d01132c6fbcc3a778e952af9bd9bf))
+* `FIX`: style drag container ([#41](https://github.com/camunda/form-playground/pull/41))
+
+
 ## 0.2.1
 
 * `FIX`: fixed horizontal code editor scrolling ([`a5f661c9`](https://github.com/camunda/form-playground/commit/a5f661c9bad6353cba6677c3e75a872df210361e))
