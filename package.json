@@ -10,7 +10,7 @@
   "scripts": {
     "all": "run-s lint test build",
     "test": "karma start",
-    "build": "rollup -c",
+    "build": "rollup -c --failAfterWarnings",
     "build:watch": "rollup -cw",
     "lint": "eslint .",
     "start": "run-p build:watch start:example",
