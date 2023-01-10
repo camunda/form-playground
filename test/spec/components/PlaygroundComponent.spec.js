@@ -10,7 +10,7 @@ import {
   waitFor
 } from '@testing-library/preact/pure';
 
-import { html } from 'htm/preact';
+import { html } from 'diagram-js/lib/ui';
 
 import {
   classes as domClasses,
