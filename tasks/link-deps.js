@@ -10,7 +10,7 @@ const customLinkersMap = {
 const demoDir = path.join(__dirname, '..');
 const dependenciesDir = path.join(__dirname, '.linked-dependencies');
 
-const formJsRef = process.env.FORM_JS_BRANCH || 'develop';
+const formJsRef = process.env.FORM_JS_BRANCH || 'mdlr-3382-trim-increment';
 
 const dependencies = [ {
   repo: 'bpmn-io/form-js',
