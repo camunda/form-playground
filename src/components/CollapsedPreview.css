@@ -26,12 +26,11 @@
 }
 
 .cfp-collapsed-preview-title h1 {
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
   margin-right: 2px;
   padding: 10px;
   white-space: nowrap;
-  text-transform: uppercase;
   transform: rotate(-90deg);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
