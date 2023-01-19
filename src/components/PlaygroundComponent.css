@@ -6,6 +6,7 @@
   --color-grey-225-10-80: hsl(225, 10%, 80%);
   --color-grey-225-10-85: hsl(225, 10%, 85%);
   --color-grey-225-10-90: hsl(225, 10%, 90%);
+  --color-grey-225-10-93: hsl(225, 10%, 93%);
   --color-grey-225-10-95: hsl(225, 10%, 95%);
   --color-grey-225-10-97: hsl(225, 10%, 97%);
 
@@ -26,7 +27,7 @@
 
   --border-color: var(--color-grey-225-10-85);
   --background-color: var(--color-grey-225-10-95);
-  --palette-background-color: var(--color-grey-225-10-97);
+  --palette-background-color: var(--color-grey-225-10-95);
   --properties-background-color: var(--color-grey-225-10-97);
   --properties-group-background-color: var(--color-grey-225-10-97);
   --properties-input-background-color: var(--color-white);
@@ -64,6 +65,7 @@
   overflow: hidden;
   display: flex;
   flex: 1;
+  width: 0;
   flex-direction: column;
   border-right: solid 1px var(--border-color);
   border-left: solid 1px var(--border-color);
@@ -150,11 +152,13 @@
 .cfp-root .cfp-palette {
   background-color: var(--palette-background-color);
   overflow: auto;
+  flex: 2;
+  min-width: min-content;
+  max-width: max-content;
 }
 
 .cfp-root .cfp-palette .fjs-palette-container {
   border-right: none;
-  width: auto;
   height: 100%;
 }
 
@@ -162,37 +166,14 @@
   display: none;
 }
 
-.cfp-root .cfp-palette .fjs-palette {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.cfp-root .cfp-palette .fjs-palette-fields {
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.cfp-root .cfp-palette .fjs-palette-field {
-  justify-content: center;
-  flex-direction: column;
-}
-
-.cfp-root .cfp-palette .fjs-palette-field-icon {
-  margin: 0;
-}
-
-.cfp-root .cfp-palette .fjs-palette-header {
-  text-align: center;
-}
-
 .cfp-root .cfp-properties {
   position: relative;
   display: flex;
   height: 100%;
   overflow-y: auto;
+  flex: 2;
+  min-width: min-content;
+  max-width: max-content;
 }
 
 .cfp-root .cfp-properties .fjs-properties-container {

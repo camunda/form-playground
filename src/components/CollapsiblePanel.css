@@ -23,17 +23,9 @@
 }
 
 .cfp-collapsible-panel .cfp-collapsible-panel-title h1 {
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
   padding: 10px;
-  text-transform: uppercase;
-}
-.cfp-collapsible-panel .cfp-collapsible-panel-title .cfp-actions {
-  border-left: 1px solid var(--collapsible-border-color);
-  padding-left: 2px;
-  position: absolute;
-  right: 4px;
-  top: 2px;
 }
 
 .cfp-collapsible-panel .cfp-collapsible-panel-content {
@@ -61,7 +53,7 @@
   padding-left: 2px;
   position: absolute;
   right: 4px;
-  top: 2px;
+  top: 3px;
 }
 
 .cfp-collapsible-panel button.cfp-collapsible-panel-action {
