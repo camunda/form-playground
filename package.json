@@ -10,8 +10,8 @@
   "scripts": {
     "all": "run-s lint test build",
     "test": "karma start",
-    "build": "rollup -c --failAfterWarnings",
-    "build:watch": "rollup -cw",
+    "build": "rollup -c --failAfterWarnings --bundleConfigAsCjs",
+    "build:watch": "rollup -cw --bundleConfigAsCjs",
     "lint": "eslint .",
     "start": "run-p build:watch start:example",
     "start:example": "npm start --workspace=example",
