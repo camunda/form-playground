@@ -6,6 +6,15 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.0 
+
+* `FEAT`: add scalable component library ([#49](https://github.com/camunda/form-playground/issues/49))
+* `FEAT`: support searchable `select` component 
+* `FEAT`: add auto complete for variable names in JSON editor ([#295](https://github.com/bpmn-io/form-js/issues/295))
+* `FEAT`: emit `drag.*` events ([#462](https://github.com/bpmn-io/form-js/issues/462))
+* `FEAT`: disable `text` links in editor ([#439](https://github.com/bpmn-io/form-js/issues/439))
+* `DEPS`: update `form-js` to 0.12.0 ([`4d6a8733`](https://github.com/camunda/form-playground/commit/4d6a873321135c9b6c7ecbae7ae406bebdeaf088))
+
 ## 0.3.2 
 
 * `DEPS`: update `diagram-js` to 11.14.4 ([#47](https://github.com/camunda/form-playground/pull/47))
