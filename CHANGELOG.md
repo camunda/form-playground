@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.4.1
+
+* `DEPS`: update to `form-js` to 0.12.1
+
 ## 0.4.0 
 
 * `FEAT`: add scalable component library ([#49](https://github.com/camunda/form-playground/issues/49))
