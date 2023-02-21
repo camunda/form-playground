@@ -2,7 +2,7 @@ import {
   CamundaFormPlayground
 } from '@camunda/form-playground';
 
-import schema from '../resources/form.json';
+import schema from '../resources/empty.json';
 
 import './style.css';
 
