@@ -134,6 +134,10 @@
   display: inherit;
 }
 
+.cfp-root .fjs-editor-container .fjs-children {
+  min-width: unset;
+}
+
 .cfp-root .cfp-collapsible-panel .cm-editor {
   background-color: var(--cm-background-color);
   height: 100%;
@@ -201,8 +205,12 @@
   cursor: var(--drag-cursor);
 }
 
+.cfp-root:not(.cfp-open-preview) .fjs-children.fjs-drop-container-vertical  {
+  border: 2px dashed transparent;
+}
+
 @media only screen and (min-width: 1650px) {
-  .gu-unselectable .cfp-root:not(.cfp-open-preview) .fjs-children.fjs-drop-container-vertical  {
-    border: 2px dashed var(--drag-container-border-color);
+  .cfp-root:not(.cfp-open-preview) .gu-unselectable .fjs-children.fjs-drop-container-vertical  {
+    border-color: var(--drag-container-border-color);
   }
 }
