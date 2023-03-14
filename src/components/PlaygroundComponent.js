@@ -49,6 +49,7 @@ export function PlaygroundComponent(props) {
   const {
     data,
     emitter,
+    hideActionFields = false,
     layoutConfig = {},
     onInit,
     schema,
@@ -198,7 +199,7 @@ export function PlaygroundComponent(props) {
   // (5) render
   return html`
     <${LayoutContext.Provider} value=${ layoutContext }>
-    <div class="${classNames('cfp-root', { 'cfp-open-preview': previewOpen })}">
+    <div class="${classNames('cfp-root', { 'cfp-open-preview': previewOpen, 'cfp-hide-actions': hideActionFields })}">
       <div class="cfp-palette" ref=${ paletteContainerRef }></div>
       <div class="cfp-left">
         <${CollapsiblePanel} idx="${ FORM_DEFINITION_IDX }" title="Form Definition">

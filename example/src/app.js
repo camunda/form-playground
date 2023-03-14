@@ -43,7 +43,8 @@ let mode;
 const formPlayground = new CamundaFormPlayground({
   container,
   schema,
-  data
+  data,
+  hideActionFields: true
 });
 
 setMode('design');

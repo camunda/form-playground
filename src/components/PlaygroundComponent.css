@@ -166,6 +166,10 @@
   display: none;
 }
 
+.cfp-root.cfp-hide-actions .cfp-palette .fjs-palette-group[data-group-id="action"] {
+  display: none;
+}
+
 .cfp-root .cfp-properties {
   position: relative;
   display: flex;
