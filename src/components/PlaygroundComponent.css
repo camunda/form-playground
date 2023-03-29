@@ -192,6 +192,11 @@
   --arrow-hover-background-color: var(--properties-arrow-hover-background-color);
 }
 
+/* mitigate low contrast: https://github.com/bpmn-io/cm-theme/issues/4 */
+.cfp-root .cfp-properties .bio-properties-panel-feelers-editor .cm-content ::selection {
+  background: #a4d3fc !important;
+}
+
 /**
  * Custom Dragula Styles
  *

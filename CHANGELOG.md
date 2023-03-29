@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.5.1
+
+* `FIX`: override selection color for template editor
+
 ## 0.5.0
 
 * `FEAT`: allow primitives for multi select values ([#542](https://github.com/bpmn-io/form-js/issues/542))
