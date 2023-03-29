@@ -6,6 +6,22 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.5.0
+
+* `FEAT`: allow primitives for multi select values ([#542](https://github.com/bpmn-io/form-js/issues/542))
+* `FEAT`: support more flexible rows layout with columns ([#560](https://github.com/bpmn-io/form-js/issues/560))
+* `FEAT`: support FEEL templating in `text` components ([#567](https://github.com/bpmn-io/form-js/pull/567))
+* `DEPS`: update to `form-js` to 0.13.0
+
+### Breaking Changes
+
+* `@camunda/form-playground/dist/assets/dragula.css` got removed
+* `@camunda/form-playground/assets/flatpickr/light.css` got removed
+* `@camunda/form-playground/assets/properties-panel.css` got removed
+
+The missing styles are included in the general style exports (`form-js.css`, `form-js-editor.css`, `form-js-playground.css`). If you need the base styles on their own, please find them in the additional `*-base.css` exports in the `dist/assets` directory.
+
+
 ## 0.4.1
 
 * `DEPS`: update to `form-js` to 0.12.1
