@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.5.2
+
+* `DEPS`: update to `form-js` to 0.13.1
+
 ## 0.5.1
 
 * `FIX`: override selection color for template editor
