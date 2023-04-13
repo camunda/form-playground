@@ -130,6 +130,11 @@
   flex-direction: column;
 }
 
+.cfp-root .fjs-container .cds--grid .cds--row {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
 .cfp-root .fjs-editor-container {
   display: inherit;
 }
