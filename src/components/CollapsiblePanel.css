@@ -1,9 +1,12 @@
 .cfp-root {
-  --collapsible-border-color: var(--color-grey-225-10-85);
-  --collapsible-title-background-color: var(--color-grey-225-10-95);
-  --collapsible-action-fill-color: var(--color-grey-225-10-35);
-  --collapsible-title-hover-action-background-color: var(--color-grey-225-10-85);
-  --collapsible-action-hover-background-color: var(--color-grey-225-10-80);
+  --collapsible-border-color: var(
+    --cds-border-strong, 
+    var(--cds-border-strong-01, var(--color-grey-225-10-85))
+  );
+  --collapsible-title-background-color: var(--cds-layer, var(--color-grey-225-10-95));
+  --collapsible-action-fill-color: var(--cds-icon-secondary, var(--color-grey-225-10-35));
+  --collapsible-title-hover-action-background-color: var(--cds-background-hover, var(--color-grey-225-10-85));
+  --collapsible-action-hover-background-color: var(--cds-background-hover var(--color-grey-225-10-80));
 }
 
 .cfp-collapsible-panel {
@@ -11,6 +14,7 @@
   flex-direction: column;
   overflow: hidden;
   border-top: solid 1px var(--collapsible-border-color);
+  color: var(--cds-text-primary, inherit);
 }
 
 .cfp-collapsible-panel .cfp-collapsible-panel-title {
@@ -25,7 +29,11 @@
 .cfp-collapsible-panel .cfp-collapsible-panel-title h1 {
   font-size: 14px;
   margin: 0;
+  margin-right: 2px;
   padding: 10px;
+  white-space: nowrap;
+  font-weight: bold;
+  line-height: inherit;
 }
 
 .cfp-collapsible-panel .cfp-collapsible-panel-content {

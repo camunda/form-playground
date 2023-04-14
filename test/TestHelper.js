@@ -1,9 +1,9 @@
-import './test.css';
-
-import '@bpmn-io/form-js/dist/assets/form-js.css';
-import '@bpmn-io/form-js/dist/assets/form-js-editor.css';
+import testCSS from './test.css';
 
 import axe from 'axe-core';
+
+import formCSS from '@bpmn-io/form-js/dist/assets/form-js.css';
+import formEditorCSS from '@bpmn-io/form-js/dist/assets/form-js-editor.css';
 
 /**
  * https://www.deque.com/axe/core-documentation/api-documentation/#axe-core-tags
@@ -19,6 +19,12 @@ export function isSingleStart(topic) {
 
   // @ts-ignore-next-line
   return window.__env__ && window.__env__.SINGLE_START === topic;
+}
+
+export function insertStyles() {
+  insertCSS('test.css', testCSS);
+  insertCSS('form-js.css', formCSS);
+  insertCSS('editor.css', formEditorCSS);
 }
 
 export function insertCSS(name, css) {
