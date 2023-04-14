@@ -8,7 +8,7 @@ const customLinkersMap = {
   'bpmn-io/form-js': linkFormJs
 };
 
-const DEFAULT_BRANCH = 'develop';
+const DEFAULT_BRANCH = 'theming';
 
 const demoDir = path.join(__dirname, '..');
 const dependenciesDir = path.join(__dirname, '.linked-dependencies');

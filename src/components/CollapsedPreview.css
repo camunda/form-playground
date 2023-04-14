@@ -1,8 +1,8 @@
 .cfp-root {
-  --collapsed-preview-background-color: var(--color-grey-225-10-95);
-  --collapsed-preview-action-fill-color: var(--color-grey-225-10-35);
-  --collapsed-preview-hover-action-background-color: var(--color-grey-225-10-85);
-  --collapsed-preview-action-hover-background-color: var(--color-grey-225-10-80);
+  --collapsed-preview-background-color: var(--cds-layer, var(--color-grey-225-10-95));
+  --collapsed-preview-action-fill-color: var(--cds-icon-secondary, var(--color-grey-225-10-35));
+  --collapsed-preview-hover-action-background-color: var(--cds-background-hover, var(--color-grey-225-10-85));
+  --collapsed-preview-action-hover-background-color: var(--cds-background-hover, var(--color-grey-225-10-80));
   --collapsed-preview-cursor: var(--collapsible-cursor);
 }
 
@@ -13,6 +13,7 @@
   display: none;
   flex-direction: column;
   background: var(--collapsed-preview-background-color);
+  color: var(--cds-text-primary, inherit);
   position: relative;
 }
 
@@ -31,6 +32,8 @@
   margin-right: 2px;
   padding: 10px;
   white-space: nowrap;
+  font-weight: bold;
+  line-height: inherit;
   transform: rotate(-90deg);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);

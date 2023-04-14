@@ -50,14 +50,24 @@ module.exports = function(karma) {
         modules: [
           'node_modules',
           __dirname
-        ]
+        ],
+        alias: {
+          'react': 'preact/compat',
+          'react-dom': 'preact/compat'
+        }
       },
       module: {
         rules: [
           {
+            test: /\.s[ac]ss$/i,
+            use: [
+              'css-loader',
+              'sass-loader'
+            ],
+          },
+          {
             test: /\.css$/i,
             use: [
-              'style-loader',
               'css-loader'
             ]
           },
@@ -87,7 +97,8 @@ module.exports = function(karma) {
         new DefinePlugin({
 
           // @barmac: process.env has to be defined to make @testing-library/preact work
-          'process.env': {}
+          'process.env': {},
+          'process.env.PTL_SKIP_AUTO_CLEANUP': !!singleStart
         })
       ],
       devtool: 'eval-source-map'

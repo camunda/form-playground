@@ -7,3 +7,11 @@ body {
 h1 {
   margin: 0 0 1rem 0;
 }
+
+.test-container {
+  height: 100% !important;
+}
+
+.test-content-container {
+  overflow: auto !important;
+}
