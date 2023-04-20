@@ -53,6 +53,10 @@ formPlayground.on('formPlayground.layoutChanged', function(event) {
   setMode(isValidation(event.layout) ? 'validate' : 'design');
 });
 
+formPlayground.once('formPlayground.init', function() {
+  formPlayground.open();
+});
+
 function setMode(value) {
   mode = value;
 
