@@ -6,6 +6,11 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.6.0
+
+* `FEAT`: implemented required parameter for checkboxes, checklists and taglists ([#594](https://github.com/bpmn-io/form-js/issues/594))
+* `DEPS`: update to `form-js` to 0.14.1
+
 ## 0.5.2
 
 * `DEPS`: update to `form-js` to 0.13.1
