@@ -10,10 +10,15 @@ import {
 
 import mitt from 'mitt';
 
+export { CARBON_STYLES } from './components/carbon/index';
+
 import { PlaygroundComponent } from './components/PlaygroundComponent';
+
+import { CarbonizedFormEditor as CarbonizedFormEditorComponent } from './components/carbon/CarbonizedFormEditor';
 
 /**
  * @typedef { {
+ *  component?: any,
  *  container?: Element,
  *  data: any,
  *  exporter?: { name: string, version: string },
@@ -28,6 +33,7 @@ import { PlaygroundComponent } from './components/PlaygroundComponent';
 export function CamundaFormPlayground(options) {
 
   const {
+    component = PlaygroundComponent,
     container: parent,
     data,
     schema,
@@ -130,7 +136,7 @@ export function CamundaFormPlayground(options) {
   };
 
   render(html`
-    <${PlaygroundComponent}
+    <${component}
       data=${ data }
       emitter=${ emitter }
       layoutConfig=${ layoutConfig }
@@ -161,5 +167,17 @@ export async function createCamundaFormPlayground(options) {
     } catch (err) {
       return reject(err);
     }
+  });
+}
+
+/**
+ * @param {CamundaFormPlaygroundOptions} options
+ *
+ * @return {CamundaFormPlayground}
+ */
+export function CarbonizedFormEditor(options) {
+  return new CamundaFormPlayground({
+    ...options,
+    component: CarbonizedFormEditorComponent
   });
 }

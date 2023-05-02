@@ -1,16 +1,33 @@
 import {
-  CamundaFormPlayground
+  CamundaFormPlayground,
+  CarbonizedFormEditor
 } from '@camunda/form-playground';
 
 import schema from '../resources/form.json';
 
 import './style.css';
 
+if (isCarbon()) {
+  require('./theme.scss');
+}
+
+const THEMES = [
+  {
+    key: 'light',
+    cls: 'cds--g10'
+  },
+  {
+    key: 'dark',
+    cls: 'cds--g100'
+  }
+];
+
 
 const container = document.querySelector('.playground');
 
 const designBtn = document.querySelector('.design');
 const validateBtn = document.querySelector('.validate');
+const changeThemeBtn = document.querySelector('.toggle-theme');
 
 const data = {
   creditor: 'John Doe Company',
@@ -39,8 +56,10 @@ const data = {
 };
 
 let mode;
+const theme = getTheme();
 
-const formPlayground = new CamundaFormPlayground({
+const formPlayground = new (isCarbon() ? CarbonizedFormEditor : CamundaFormPlayground)({
+  theme,
   container,
   schema,
   data
@@ -79,8 +98,14 @@ function triggerDesign() {
   formPlayground.collapse();
 }
 
+function toggleTheme() {
+  document.body.className = getTheme() === 'light' ? 'cds--g100' : 'cds--g10';
+  formPlayground.fire('formPlayground.updateTheme', { theme: getTheme() });
+}
+
 designBtn.addEventListener('click', triggerDesign);
 validateBtn.addEventListener('click', triggerValidation);
+changeThemeBtn && changeThemeBtn.addEventListener('click', toggleTheme);
 
 document.body.addEventListener('keydown', function(event) {
   if (event.code === 'KeyP' && event.shiftKey && (event.metaKey || event.ctrlKey)) {
@@ -98,4 +123,18 @@ function isValidation(layout = {}) {
     (layout['form-input'] || {}).open ||
     (layout['form-output'] || {}).open
   );
+}
+
+function isCarbon() {
+  return window.location.pathname.includes('/carbon');
+}
+
+function getTheme() {
+  const theme = findTheme(document.body.className);
+
+  return theme && theme.key;
+}
+
+function findTheme(cls) {
+  return THEMES.find(t => t.cls === cls);
 }

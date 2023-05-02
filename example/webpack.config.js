@@ -12,8 +12,22 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: 'app.js',
   },
+  resolve: {
+    alias: {
+      'react': 'preact/compat',
+      'react-dom': 'preact/compat'
+    }
+  },
   module: {
     rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+      },
       {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]

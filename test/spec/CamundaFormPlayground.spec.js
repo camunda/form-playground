@@ -19,6 +19,7 @@ import schema from './form.json';
 
 import {
   insertCSS,
+  insertStyles,
   isSingleStart
 } from '../TestHelper';
 
@@ -39,6 +40,7 @@ describe('CamundaFormPlayground', function() {
   let container, playground;
 
   beforeEach(function() {
+    insertStyles();
     container = TestContainer.get(this);
   });
 

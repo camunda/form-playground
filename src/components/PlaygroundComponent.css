@@ -25,16 +25,23 @@
   --color-white: hsl(0, 0%, 100%);
   --color-black: hsl(0, 0%, 0%);
 
-  --border-color: var(--color-grey-225-10-85);
-  --background-color: var(--color-grey-225-10-95);
-  --palette-background-color: var(--color-grey-225-10-95);
-  --properties-background-color: var(--color-grey-225-10-97);
-  --properties-group-background-color: var(--color-grey-225-10-97);
+  --border-color: var(--cds-border-strong-01, var(--color-grey-225-10-85));
+  --background-color: var(--cds-background, var(--color-grey-225-10-95));
+  --palette-background-color: var(--cds-background, var(--color-grey-225-10-95));
+  --palette-header-background-color: var(--cds-layer, var(--color-grey-225-10-97));
+  --palette-header-border-color: var(--cds-border-strong, var(--cds-border-strong-01, var(--color-grey-225-10-85)));
+  --properties-background-color: var(--cds-background, var(--color-grey-225-10-97));
+  --properties-group-background-color: var(--cds-background, var(--color-grey-225-10-97));
   --properties-input-background-color: var(--color-white);
-  --properties-arrow-hover-background-color: var(--color-grey-225-10-90);
-  --container-background-color: var(--color-white);
-  --cm-background-color: var(--color-white);
-  --drag-container-border-color: var(--color-grey-225-10-80);
+  --properties-arrow-hover-background-color: var(--cds-background-hover, var(--color-grey-225-10-90));
+  --properties-header-background-color: var(--cds-layer-01, var(--color-grey-225-10-95));
+  --container-background-color: var(--cds-background, var(--color-white));
+  --cm-background-color: var(--cds-background, var(--color-white));
+  --cm-gutters-background-color: var(--cds-background, #f5f5f5);
+  --cm-gutters-color: var(--cds-text-secondary, #6c6c6c);
+  --cm-gutters-border-color: var(--cds-border-strong-01, #ddd);
+  --cm-active-background-color: var(--cds-background-active, #e2f2ff);
+  --drag-container-border-color: var(--cds-background-active, var(--color-grey-225-10-80));
 
   --form-container-max-width: 1200px;
   --collapsible-cursor: default;
@@ -79,6 +86,10 @@
   flex: none;
   width: 35px;
   border-left: none;
+}
+
+.cfp-root .cfp-editor-container {
+  --cursor-disabled: default;
 }
 
 .cfp-root .cfp-editor-container,
@@ -130,11 +141,6 @@
   flex-direction: column;
 }
 
-.cfp-root .fjs-container .cds--grid .cds--row {
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
 .cfp-root .fjs-editor-container {
   display: inherit;
 }
@@ -158,12 +164,28 @@
   font-family: var(--font-family-monospace);
 }
 
+.cfp-root .cfp-collapsible-panel .cm-editor .cm-gutters {
+  background-color: var(--cm-gutters-background-color);
+  color: var(--cm-gutters-color);
+  border-right: 1px solid var(--cm-gutters-border-color);
+}
+
+.cfp-root .cfp-collapsible-panel .cm-editor .cm-activeLineGutter,
+.cfp-root .cfp-collapsible-panel .cm-editor .cm-activeLine {
+  background-color: var(--cm-active-background-color);
+}
+
 .cfp-root .cfp-palette {
   background-color: var(--palette-background-color);
   overflow: auto;
   flex: 2;
   min-width: min-content;
   max-width: max-content;
+}
+
+.cfp-root .cfp-palette .fjs-palette-header {
+  background-color: var(--palette-header-background-color);
+  border-color: var(--palette-header-border-color);
 }
 
 .cfp-root .cfp-palette .fjs-palette-container {
@@ -187,7 +209,6 @@
 
 .cfp-root .cfp-properties .fjs-properties-container {
   --properties-panel-width: 300px;
-  --color-properties-container-background: var(--properties-background-color);
   border-left: none !important;
 }
 
@@ -195,6 +216,7 @@
   --input-background-color: var(--properties-input-background-color);
   --group-background-color: var(--properties-group-background-color);
   --arrow-hover-background-color: var(--properties-arrow-hover-background-color);
+  --header-background-color: var(--properties-header-background-color);
 }
 
 /* mitigate low contrast: https://github.com/bpmn-io/cm-theme/issues/4 */

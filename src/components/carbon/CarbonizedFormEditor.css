@@ -1,0 +1,67 @@
+/* todo(pinussilvestrus): spacings */
+
+.cfp-container .cfp-carbonized-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+.cfp-container .cfp-carbonized-container .cfp-root {
+  --palette-header-background-color: var(--cds-background);
+  --palette-header-border-color: transparent;
+  --properties-background-color: var(--cds-background);
+  --properties-header-background-color: var(--cds-background);
+  --container-background-color: var(--cds-layer-01);
+  --border-color: var(--cds-border-subtle-00);
+  --collapsible-title-background-color: var(--cds-background);
+  --collapsed-preview-background-color: var(--cds-background);
+  --collapsible-border-color: tranparent;
+  --cm-background-color: var(--cds-layer-01);
+  --cm-gutters-background-color: var(--cds-layer-hover-01);
+  --cm-active-background-color: hsla(219, 99%, 53%, 0.1);
+}
+
+.cfp-container .cfp-carbonized-container .cfp-root .fjs-container .cds--grid {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.cfp-container .cfp-carbonized-container .fjs-palette-search-container {
+  color: var(--cds-text-primary);
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--cds-border-strong, var(--cds-border-strong-01));
+  height: '2.5rem';
+}
+
+.cfp-container .cfp-carbonized-container .fjs-palette-search-container:focus-within {
+  outline: 2px solid var(--cds-focus);
+  outline-offset: -2px;
+}
+
+.cfp-container .cfp-carbonized-container .fjs-palette-group-title {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.cfp-container .cfp-carbonized-container .fjs-form {
+  background-color: var(--cds-field-layer);
+}
+
+.cfp-container .cfp-carbonized-container .fjs-input, 
+.cfp-container .cfp-carbonized-container .fjs-form-field-textfield .fjs-input, 
+.cfp-container .cfp-carbonized-container .fjs-form-field-datetime .fjs-input,
+.cfp-container .cfp-carbonized-container .fjs-form-field-select .fjs-input-group,
+.cfp-container .cfp-carbonized-container .fjs-input-group .fjs-input-adornment,
+.cfp-container .cfp-carbonized-container .fjs-taglist,
+.cfp-container .cfp-carbonized-container .fjs-form-field-number .fjs-input-group,
+.cfp-container .cfp-carbonized-container .fjs-form-field-number .fjs-input-group .fjs-number-arrow-container .fjs-number-arrow-up,
+.cfp-container .cfp-carbonized-container .fjs-form-field-number .fjs-input-group .fjs-number-arrow-container .fjs-number-arrow-down {
+  background-color: var(--cds-field-02);
+}
+
+.cfp-container .cfp-carbonized-container .cfp-root.cfp-open-preview .cfp-left {
+  margin-left: 0;
+  border-right: none;
+}
