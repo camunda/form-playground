@@ -18,7 +18,7 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: allow uneven columns ([#605](https://github.com/bpmn-io/form-js/issues/605))
 * `FEAT`: resize form fields ([#566](https://github.com/bpmn-io/form-js/issues/566))
 * `FEAT`: support FEEL for labels and descriptions ([#658](https://github.com/bpmn-io/form-js/pull/658))
-* `FIX`: support markdown tables in `text` components ([#205](https://github.com/bpmn-io/form-js/issues/205)
+* `FIX`: support markdown tables in `text` components ([#205](https://github.com/bpmn-io/form-js/issues/205))
 * `DEPS`: update to `form-js` to 1.0.0-alpha.2
 
 ## 0.6.0
