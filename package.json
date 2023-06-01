@@ -93,7 +93,7 @@
     "webpack": "^5.74.0"
   },
   "peerDependencies": {
-    "@bpmn-io/form-js": ">= 0.12"
+    "@bpmn-io/form-js": ">= 1.0.0-alpha.2"
   },
   "sideEffects": [
     "*.css"

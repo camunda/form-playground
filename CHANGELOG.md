@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.0-alpha.1
+
+* `FIX`: update form-js peer dependency
+
 ## 0.7.0-alpha.0
 
 * `FEAT`: support `readonly` form field property ([#636](https://github.com/bpmn-io/form-js/pull/636))
