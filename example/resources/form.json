@@ -1,25 +1,16 @@
 {
   "components": [
     {
-      "type": "text",
-      "text": "# Invoice\nLorem _ipsum_ __dolor__ `sit`.\n  \n  \nA list of BPMN symbols:\n* Start Event\n* Task\nLearn more about [forms](https://bpmn.io).\n  \n  \nThis [malicious link](javascript:throw onerror=alert,'some string',123,'haha') __should not work__."
-    },
-    {
-      "key": "creditor",
-      "label": "Creditor",
-      "type": "textfield",
-      "validate": {
-        "required": true
-      }
-    },
-    {
       "description": "An invoice number in the format: C-123.",
       "key": "invoiceNumber",
-      "label": "Invoice Number",
       "type": "textfield",
       "validate": {
         "pattern": "^C-[0-9]+$"
       }
+    },
+    {
+      "type": "image",
+      "source": "https://foo.png"
     },
     {
       "key": "amount",

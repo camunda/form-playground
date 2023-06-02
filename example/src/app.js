@@ -11,6 +11,7 @@ const container = document.querySelector('.playground');
 
 const designBtn = document.querySelector('.design');
 const validateBtn = document.querySelector('.validate');
+const checkA11yBtn = document.querySelector('.check-a11y');
 
 const data = {
   creditor: 'John Doe Company',
@@ -39,6 +40,7 @@ const data = {
 };
 
 let mode;
+let a11yEnabled = false;
 
 const formPlayground = new CamundaFormPlayground({
   container,
@@ -79,8 +81,30 @@ function triggerDesign() {
   formPlayground.collapse();
 }
 
+function toggleA11y() {
+  a11yEnabled = !a11yEnabled;
+
+  const form = formPlayground.getForm();
+  const formEditor = formPlayground.getEditor();
+
+  const onSchemaChanged = async () => {
+    setTimeout(() => form.get('a11yValidation').execute(), 500);
+  };
+
+  if (a11yEnabled) {
+    form.get('a11yValidation').execute();
+    checkA11yBtn.classList.add('active');
+    formEditor.on('changed', onSchemaChanged);
+  } else {
+    checkA11yBtn.classList.remove('active');
+    formEditor.off('changed', onSchemaChanged);
+    form.get('a11yValidation').clear();
+  }
+}
+
 designBtn.addEventListener('click', triggerDesign);
 validateBtn.addEventListener('click', triggerValidation);
+checkA11yBtn.addEventListener('click', toggleA11y);
 
 document.body.addEventListener('keydown', function(event) {
   if (event.code === 'KeyP' && event.shiftKey && (event.metaKey || event.ctrlKey)) {
