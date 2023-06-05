@@ -1,162 +1,102 @@
 {
   "components": [
     {
+      "text": "# Purchase request \n# {{request.id}} \n### Request details \nRequester: **{{request.requester}}** \nItem: **{{request.item}}** \nAmount: **{{string(request.amount)}}**",
       "type": "text",
-      "text": "# Invoice\nLorem _ipsum_ __dolor__ `sit`.\n  \n  \nA list of BPMN symbols:\n* Start Event\n* Task\nLearn more about [forms](https://bpmn.io).\n  \n  \nThis [malicious link](javascript:throw onerror=alert,'some string',123,'haha') __should not work__."
+      "id": "Field_09i3js1"
     },
     {
-      "key": "creditor",
-      "label": "Creditor",
-      "type": "textfield",
-      "validate": {
-        "required": true
-      }
+      "type": "image",
+      "id": "Field_1onpybb",
+      "source": "=request.image",
+      "alt": "An image of the requested item"
     },
     {
-      "description": "An invoice number in the format: C-123.",
-      "key": "invoiceNumber",
-      "label": "Invoice Number",
-      "type": "textfield",
-      "validate": {
-        "pattern": "^C-[0-9]+$"
-      }
-    },
-    {
-      "key": "amount",
-      "label": "Amount",
-      "type": "number",
-      "validate": {
-        "min": 0,
-        "max": 1000
-      }
-    },
-    {
-      "key": "approved",
-      "label": "Approved",
-      "type": "checkbox"
-    },
-    {
-      "key": "approvedBy",
-      "label": "Approved By",
-      "type": "textfield"
-    },
-    {
-      "key": "mailto",
-      "label": "Email data to",
-      "type": "checklist",
       "values": [
         {
-          "label": "Approver",
-          "value": "approver"
+          "label": "Hardware",
+          "value": "hardware"
         },
         {
-          "label": "Manager",
-          "value": "manager"
+          "label": "Software",
+          "value": "software"
         },
         {
-          "label": "Regional Manager",
-          "value": "regional-manager"
+          "label": "Other",
+          "value": "other"
         }
-      ]
-    },
-    {
-      "key": "product",
-      "label": "Product",
-      "type": "radio",
-      "values": [
-        {
-          "label": "Camunda Platform",
-          "value": "camunda-platform"
-        },
-        {
-          "label": "Camunda Cloud",
-          "value": "camunda-cloud"
-        }
-      ]
-    },
-    {
-      "key": "dri",
-      "label": "Assign DRI",
-      "type": "radio",
-      "valuesKey": "queriedDRIs"
-    },
-    {
-      "key": "tags",
-      "label": "Taglist",
+      ],
+      "label": "Purchase categories",
       "type": "taglist",
-      "values": [
-        {
-          "label": "Tag1",
-          "value": "tag1"
-        },
-        {
-          "label": "Tag2",
-          "value": "tag2"
-        },
-        {
-          "label": "Tag3",
-          "value": "tag3"
-        },
-        {
-          "label": "Tag4",
-          "value": "tag4"
-        },
-        {
-          "label": "Tag5",
-          "value": "tag5"
-        },
-        {
-          "label": "Tag6",
-          "value": "tag6"
-        },
-        {
-          "label": "Tag7",
-          "value": "tag7"
-        },
-        {
-          "label": "Tag8",
-          "value": "tag8"
-        },
-        {
-          "label": "Tag9",
-          "value": "tag9"
-        },
-        {
-          "label": "Tag10",
-          "value": "tag10"
-        },
-        {
-          "label": "Tag11",
-          "value": "tag11"
-        }
-      ]
+      "id": "Field_10oknp0",
+      "key": "selectedCategories",
+      "description": "Please confirm or adjust the purchase categories"
     },
     {
-      "key": "language",
-      "label": "Language",
-      "type": "select",
-      "values": [
-        {
-          "label": "German",
-          "value": "german"
-        },
-        {
-          "label": "English",
-          "value": "english"
-        }
-      ]
+      "text": "### Approval",
+      "type": "text",
+      "id": "Field_0ce23cg"
     },
     {
-      "key": "submit",
-      "label": "Submit",
-      "type": "button"
+      "label": "Approved",
+      "type": "checkbox",
+      "id": "Field_0yc27dh",
+      "key": "approved",
+      "layout": {
+        "row": "Row_1",
+        "columns": 4
+      }
     },
     {
-      "action": "reset",
-      "key": "reset",
-      "label": "Reset",
-      "type": "button"
+      "label": "Comment taker",
+      "type": "textfield",
+      "id": "Field_0yc27dz",
+      "key": "commentTaker",
+      "layout": {
+        "row": "Row_1"
+      },
+      "conditional": {
+        "hide": "=approved"
+      }
+    },
+    {
+      "label": "Comments",
+      "type": "textarea",
+      "id": "Field_1xzfbr8",
+      "key": "comments",
+      "description": "Enter some details why request can not be approved.",
+      "conditional": {
+        "hide": "=approved"
+      }
+    },
+    {
+      "label": "Push comments to",
+      "type": "textfield",
+      "id": "Field_1xzfbz5",
+      "key": "pushTo",
+      "conditional": {
+        "hide": "=approved"
+      },
+      "appearance": {
+        "prefixAdorner": "https://",
+        "suffixAdorner": ".com/api/comments"
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Approve",
+      "type": "button",
+      "id": "Field_17nlxo3",
+      "key": "field_1kbfisg"
     }
   ],
-  "type": "default"
+  "type": "default",
+  "id": "Form_0lgk6w4",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.1.0",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.6.0-rc.0"
+  },
+  "schemaVersion": 9
 }

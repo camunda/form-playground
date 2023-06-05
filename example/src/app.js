@@ -13,29 +13,15 @@ const designBtn = document.querySelector('.design');
 const validateBtn = document.querySelector('.validate');
 
 const data = {
-  creditor: 'John Doe Company',
-  amount: 456,
-  invoiceNumber: 'C-123',
-  approved: true,
-  approvedBy: 'John Doe',
-  mailto: [ 'regional-manager', 'approver' ],
-  product: 'camunda-cloud',
-  queriedDRIs: [
-    {
-      'label': 'John Doe',
-      'value': 'johnDoe'
-    },
-    {
-      'label': 'Anna Bell',
-      'value': 'annaBell'
-    },
-    {
-      'label': 'Nico Togin',
-      'value': 'incognito'
-    }
-  ],
-  tags: [ 'tag1', 'tag2', 'tag3' ],
-  language: 'english'
+  'request': {
+    'id': '0010549221',
+    'item': 'New Notebook',
+    'image': 'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MP_99397903/fee_325_225_png',
+    'requester': 'John Doe',
+    'amount': 2400
+  },
+  'selectedCategories': [ 'hardware' ],
+  'approved': false
 };
 
 let mode;
