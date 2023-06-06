@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.7.0-alpha.2
+
+* `DEPS`: update to `form-js` to 1.0.0-alpha.8
+
 ## 0.7.0-alpha.1
 
 * `FIX`: update form-js peer dependency
