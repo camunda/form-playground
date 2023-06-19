@@ -65,7 +65,7 @@
     "chai": "^4.3.7",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
-    "del": "6.1.1",
+    "del": "7.0.0",
     "eslint": "^8.22.0",
     "eslint-plugin-bpmn-io": "^1.0.0",
     "execa": "^1.0.0",
