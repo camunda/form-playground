@@ -39,5 +39,7 @@ jobs:
       env:
         TEST_BROWSERS: ChromeHeadless
       run: npm run all
+    - name: Verify linking works
+      run: npm run link-deps
     - name: Upload coverage
       uses: codecov/codecov-action@v3
