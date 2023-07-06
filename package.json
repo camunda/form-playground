@@ -54,7 +54,7 @@
     "mitt": "^3.0.0"
   },
   "devDependencies": {
-    "@bpmn-io/form-js": "^1.0.0-alpha.8",
+    "@bpmn-io/form-js": "^1.0.0",
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@testing-library/preact": "^2.0.1",
