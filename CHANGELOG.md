@@ -6,24 +6,22 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
-## 0.7.0-alpha.2
+## 0.7.0
 
-* `DEPS`: update to `form-js` to 1.0.0-alpha.8
-
-## 0.7.0-alpha.1
-
-* `FIX`: update form-js peer dependency
-
-## 0.7.0-alpha.0
-
+* `FEAT`: support FEEL and templates for `prefixAdorner` and `suffixAdorner` ([#663](https://github.com/bpmn-io/form-js/pull/663))
+* `FEAT`: support templates for `alt` and `source` properties ([#663](https://github.com/bpmn-io/form-js/pull/663))
+* `FEAT`: support FEEL to populate multiselect values via `valuesExpression` ([#673](https://github.com/bpmn-io/form-js/issues/673))
+* `FEAT`: support FEEL for `min`, `max`, `minLength` and `maxLength` ([#668](https://github.com/bpmn-io/form-js/pull/668))
+* `FEAT`: support FEEL for `label` and `description` ([#658](https://github.com/bpmn-io/form-js/pull/658))
 * `FEAT`: support `readonly` form field property ([#636](https://github.com/bpmn-io/form-js/pull/636))
 * `FEAT`: make editor form fields accessible via keyboard ([#173](https://github.com/bpmn-io/form-js/issues/173))
 * `FEAT`: display editor form fields as readonly ([#636](https://github.com/bpmn-io/form-js/pull/636))
 * `FEAT`: allow uneven columns ([#605](https://github.com/bpmn-io/form-js/issues/605))
 * `FEAT`: resize form fields ([#566](https://github.com/bpmn-io/form-js/issues/566))
-* `FEAT`: support FEEL for labels and descriptions ([#658](https://github.com/bpmn-io/form-js/pull/658))
+* `FEAT`: re-export external library styles separately ([#677](https://github.com/bpmn-io/form-js/issues/677))
+* `FEAT`: add `fjs-no-theme` selector to disable themable styles ([#680](https://github.com/bpmn-io/form-js/issues/680))
 * `FIX`: support markdown tables in `text` components ([#205](https://github.com/bpmn-io/form-js/issues/205))
-* `DEPS`: update to `form-js` to 1.0.0-alpha.2
+* `DEPS`: update `form-js` to 1.0.0
 
 ## 0.6.0
 
