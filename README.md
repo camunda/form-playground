@@ -46,7 +46,7 @@ For proper styling include the necessary stylesheets, and font used:
 
 ### `createCamundaFormPlayground => Promise<Result, Error>`
 
-Create a fully rendered form playground with options `{ container?: HTMLElement, data: any, exporter?: { name: String, version: String }, layout?: any, schema: any }`.
+Create a fully rendered form playground [with options](#options).
 
 ```javascript
 import { createFormPlayground } from '@camunda/form-playground';
@@ -61,7 +61,7 @@ const formPlayground = await createFormPlayground({
 
 ### `CamundaFormPlayground`
 
-Create a new form playground with options `{ container?: HTMLElement, data: any, exporter?: { name: String, version: String }, layout?: any, schema: any }`.
+Create a new form playground [with options](#options).
 
 ```javascript
 import { CamundaFormPlayground } from '@camunda/form-playground';
@@ -71,6 +71,32 @@ const formPlayground = new CamundaFormPlayground({
   data,
   schema
 });
+```
+
+### Options
+
+There are several options that can be passed to the `createFormPlayground` or `CamundaFormPlayground`:
+
+```javascript
+{
+  container: HTMLElement,               // optional - the container to render the form playground into
+  data: {},                             // required - set the initial form data
+  schema: {},                           // required - set the initial form schema
+  exporter: { name: '', version: '' },  // optional - set the schema exporter name and version
+  layout: {},                           // optional - set the initial form layout
+  editorAdditionalModules: [],          // optional - add additional modules to the form editor
+  viewerAdditionalModules: [],          // optional - add additional modules to the form preview
+  editorProperties: {},                 // optional - set the initial form editor properties
+  viewerProperties: {},                 // optional - set the initial form preview properties
+}
+```
+
+As an example, you can use the `viewerProperties` to override the default behavior to open external links in a new tab:
+
+```javascript
+viewerProperties: {
+  textLinkTarget: '_blank'
+}
 ```
 
 ### `CamundaFormPlayground#open(containers?: string[]) => void`
