@@ -13,12 +13,19 @@ import mitt from 'mitt';
 import { PlaygroundComponent } from './components/PlaygroundComponent';
 
 /**
+ * @typedef { import('@bpmn-io/form-js-viewer').FormProperties } FormProperties
+ * @typedef { import('@bpmn-io/form-js-editor').FormEditorProperties } FormEditorProperties
+ *
  * @typedef { {
  *  container?: Element,
  *  data: any,
+ *  editorAdditionalModules?: Array<any>,
+ *  editorProperties?: FormEditorProperties
  *  exporter?: { name: string, version: string },
  *  layout?: any,
- *  schema: any
+ *  schema: any,
+ *  viewerAdditionalModules?: Array<any>,
+ *  viewerProperties?: FormProperties,
  * } } CamundaFormPlaygroundOptions
  */
 
