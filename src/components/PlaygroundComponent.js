@@ -64,6 +64,8 @@ export function PlaygroundComponent(props) {
   const resultContainerRef = useRef(null);
   const propertiesContainerRef = useRef(null);
 
+  const rootRef = useRef(null);
+
   // (1) initialize playground orchestrator
   useEffect(() => {
     playgroundRef.current = new FormPlayground({
@@ -195,10 +197,45 @@ export function PlaygroundComponent(props) {
     return setContainersLayout(containers, false);
   };
 
-  // (5) render
+  // (5) listen on dragging events to provide drop feedback
+  useEffect(() => {
+
+    const bindDropTargetListeners = () => {
+      const editor = playgroundRef.current.getEditor();
+      editor.on('drag.hover', function(event) {
+
+        const { container } = event;
+
+        if (
+          container.classList.contains('fjs-drop-container-horizontal') ||
+          container.classList.contains('fjs-drop-container-vertical')
+        ) {
+          rootRef.current.classList.add('cfp-dragging');
+        }
+      });
+
+      editor.on('drag.out', function(event) {
+        rootRef.current.classList.remove('cfp-dragging');
+      });
+    };
+
+    const playground = playgroundRef.current;
+
+    if (playground) {
+      playground.on('formPlayground.rendered', bindDropTargetListeners);
+    }
+
+    return () => {
+      if (playground) {
+        playground.off('formPlayground.rendered', bindDropTargetListeners);
+      }
+    };
+  });
+
+  // (6) render
   return html`
     <${LayoutContext.Provider} value=${ layoutContext }>
-    <div class="${classNames('cfp-root', { 'cfp-open-preview': previewOpen })}">
+    <div ref=${rootRef} class="${classNames('cfp-root', { 'cfp-open-preview': previewOpen })}">
       <div class="cfp-palette" ref=${ paletteContainerRef }></div>
       <div class="cfp-left">
         <${CollapsiblePanel} idx="${ FORM_DEFINITION_IDX }" title="Form Definition">

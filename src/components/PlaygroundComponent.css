@@ -220,7 +220,7 @@
 }
 
 @media only screen and (min-width: 1650px) {
-  .cfp-root:not(.cfp-open-preview) .gu-unselectable .fjs-children.fjs-drop-container-vertical  {
+  .cfp-root:not(.cfp-open-preview).cfp-dragging .fjs-children.fjs-drop-container-vertical  {
     border-color: var(--drag-container-border-color);
   }
 }
