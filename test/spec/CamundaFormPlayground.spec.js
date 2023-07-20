@@ -344,4 +344,61 @@ describe('CamundaFormPlayground', function() {
 
   });
 
+
+  describe('dragging behavior', function() {
+
+    let playground;
+
+    beforeEach(async function() {
+      await waitFor(async () => {
+        playground = await createCamundaFormPlayground({
+          container,
+          schema
+        });
+      });
+    });
+
+    it('should add drop target styles on <drag.hover>', async function() {
+
+      // given
+      const formEditor = playground.getEditor();
+      formEditor.get('eventBus').fire('formEditor.rendered');
+
+      // when
+      formEditor.get('eventBus').fire('drag.hover', {
+        container: domQuery('.fjs-drop-container-horizontal', container)
+      });
+
+      // then
+      const root = domQuery('.cfp-root', container);
+
+      expect(root.classList.contains('cfp-dragging')).to.be.true;
+    });
+
+
+    it('should remove drop target styles on <drag.out>', async function() {
+
+      // given
+      const formEditor = playground.getEditor();
+      formEditor.get('eventBus').fire('formEditor.rendered');
+
+      // when
+      formEditor.get('eventBus').fire('drag.hover', {
+        container: domQuery('.fjs-drop-container-horizontal', container)
+      });
+
+      const root = domQuery('.cfp-root', container);
+
+      // assume
+      expect(root.classList.contains('cfp-dragging')).to.be.true;
+
+      // and when
+      formEditor.get('eventBus').fire('drag.out');
+
+      // then
+      expect(root.classList.contains('cfp-dragging')).to.be.false;
+    });
+
+  });
+
 });
