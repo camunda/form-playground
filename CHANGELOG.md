@@ -6,6 +6,13 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.8.0
+
+* `FEAT`: add `spacer` component ([#731](https://github.com/bpmn-io/form-js/issues/731))
+* `FEAT`: eagerly validate form preview on blur and input ([#610](https://github.com/bpmn-io/form-js/pull/610))
+* `FEAT`: update empty state for form editor ([#336](https://github.com/bpmn-io/form-js/issues/336))
+* `DEPS`: update `form-js` to 1.1.0
+
 ## 0.7.0
 
 * `FEAT`: support FEEL and templates for `prefixAdorner` and `suffixAdorner` ([#663](https://github.com/bpmn-io/form-js/pull/663))
