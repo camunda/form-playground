@@ -4,6 +4,9 @@
     "github>bpmn-io/renovate-config:recommended",
     ":reviewer(camunda/modeling-dev)"
   ],
+  "reviewers": [
+    "team:hto-frontend"
+  ],
   "packageRules": [
     {
       "matchPackagePatterns": [
