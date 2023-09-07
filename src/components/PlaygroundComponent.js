@@ -72,6 +72,9 @@ export function PlaygroundComponent(props) {
       data,
       schema,
       editor: { inlinePropertiesPanel: false },
+      propertiesPanel: {
+        feelPopupContainer: rootRef.current
+      },
       ...restProps
     });
   }, []);
