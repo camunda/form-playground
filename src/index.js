@@ -23,6 +23,7 @@ import { PlaygroundComponent } from './components/PlaygroundComponent';
  *  editorProperties?: FormEditorProperties
  *  exporter?: { name: string, version: string },
  *  layout?: any,
+ *  propertiesPanel?: { parent: Element, feelPopupContainer: Element },
  *  schema: any,
  *  viewerAdditionalModules?: Array<any>,
  *  viewerProperties?: FormProperties,
