@@ -6,6 +6,18 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.0-alpha.0
+
+* `FEAT`: use `drag.*` events to set drop target styles ([#53](https://github.com/camunda/form-playground/issues/53))
+* `FEAT`: localized date picker based on browser language ([#733](https://github.com/bpmn-io/form-js/issues/733))
+* `FEAT`: added placeholder to playground input panel ([0f696119](https://github.com/bpmn-io/form-js/commit/0f6961191c076f8cc2d221428b2d7fdbab9a2fe3))
+* `FEAT`: implemented Group component with multiple updates ([#768](https://github.com/bpmn-io/form-js/pull/768))
+* `FEAT`: added support for nested component keys ([#464](https://github.com/bpmn-io/form-js/issues/464))
+* `FIX`: dropdown options no longer reset when form reopens ([#764](https://github.com/bpmn-io/form-js/issues/764))
+* `FIX`: removed keying from buttons ([#778](https://github.com/bpmn-io/form-js/issues/778))
+* `DEPS`: update `properties-panel` to v3.3.0
+* `DEPS`: update `form-js` to 1.3.0-alpha.0
+
 ## 0.8.0
 
 * `FEAT`: add `spacer` component ([#731](https://github.com/bpmn-io/form-js/issues/731))
