@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.0-alpha.1
+
+* `FEAT`: set feel popup container ([11ae37b6](https://github.com/camunda/form-playground/commit/11ae37b662c70fb6fbee2d985989f8eac12fb7e2))
+
 ## 0.9.0-alpha.0
 
 * `FEAT`: use `drag.*` events to set drop target styles ([#53](https://github.com/camunda/form-playground/issues/53))
