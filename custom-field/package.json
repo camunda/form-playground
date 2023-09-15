@@ -1,0 +1,41 @@
+{
+  "name": "custom-field",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buid:styles": "copyfiles -f src/styles.css dist",
+    "build:render": "webpack --config webpack.render.js",
+    "build:propertiesPanel": "webpack --config webpack.propertiesPanel.js",
+    "build:render:watch": "webpack --config webpack.render.js --watch",
+    "build:propertiesPanel:watch": "webpack --config webpack.propertiesPanel.js --watch",
+    "build": "run-s buid:styles build:render build:propertiesPanel",
+    "build:watch": "run-p buid:styles build:render:watch build:propertiesPanel:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camunda/form-playground.git",
+    "directory": "custom-field"
+  },
+  "author": {
+    "name": "Niklas Kiefer",
+    "url": "https://github.com/pinussilvestrus"
+  },
+  "contributors": [
+    {
+      "name": "bpmn.io contributors",
+      "url": "https://github.com/bpmn-io"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-loader": "^9.1.3",
+    "copyfiles": "^2.4.1",
+    "raw-loader": "^4.0.2",
+    "webpack": "^5.88.2",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@bpmn-io/properties-panel": "^3.5.0"
+  }
+}

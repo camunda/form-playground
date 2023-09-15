@@ -158,3 +158,175 @@ html, body, .root {
 .status-bar button.active:hover {
   background-color: var(--color-grey-225-10-75);
 }
+
+.upload-component-button-container {
+  display: flex;
+}
+
+.upload-component-button-container button {
+  margin: 0 10px;
+  height: 36px;
+  border-width: 1px;
+  width: 100%;
+  border-style: solid;
+  border-color: transparent;
+  font-size: var(--cds-body-compact-01-font-size,1rem);
+  font-weight: var(--cds-body-compact-01-font-weight,400);
+  line-height: var(--cds-body-compact-01-line-height,1.28572);
+  letter-spacing: var(--cds-body-compact-01-letter-spacing,0.16px);
+  background-color: var(--cds-button-secondary,#393939);
+  color: var(--cds-text-on-color,#ffffff);
+  cursor: pointer;
+}
+
+.upload-component-button-container button.primary {
+  background-color: var(--cds-button-primary,#0f62fe);
+  color: var(--cds-text-on-color,#ffffff);
+}
+
+.upload-component-button-container button.primary:hover {
+  color: var(--cds-text-on-color,#ffffff);
+  background-color: var(--cds-button-primary-hover,#0353e9);
+}
+
+.upload-component-button-container button:hover {
+  color: var(--cds-text-on-color,#ffffff);
+  background-color: var(--cds-button-secondary-hover,#474747);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(22,22,22,0.5);
+  overflow: auto;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #F4F4F4;
+  font-size: 1rem;
+  margin: 15% auto;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-title {
+  padding: 20px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-title h2 {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-size: var(--cds-heading-03-font-size,1.25rem);
+  font-weight: var(--cds-heading-03-font-weight,400);
+  line-height: var(--cds-heading-03-line-height,1.4);
+  letter-spacing: var(--cds-heading-03-letter-spacing,0);
+  color: var(--cds-text-primary,#161616);
+  -webkit-padding-end: calc(20% - 3rem);
+  padding-inline-end: calc(20% - 3rem);
+}
+
+.modal-body {
+  padding: 0px 20px 20px 20px;
+}
+
+.modal-footer {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-size: var(--cds-heading-03-font-size,1.25rem);
+  font-weight: var(--cds-heading-03-font-weight,400);
+  line-height: var(--cds-heading-03-line-height,1.4);
+  letter-spacing: var(--cds-heading-03-letter-spacing,0);
+  color: var(--cds-text-primary,#161616);
+}
+
+.modal-body label {
+  font-weight: 400;
+}
+
+.modal-body .field-group {
+  margin: 24px 0;
+}
+
+.modal-footer {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.modal-footer .modal-btn {
+  height: 36px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  font-size: var(--cds-body-compact-01-font-size,1rem);
+  font-weight: var(--cds-body-compact-01-font-weight,400);
+  line-height: var(--cds-body-compact-01-line-height,1.28572);
+  letter-spacing: var(--cds-body-compact-01-letter-spacing,0.16px);
+  background-color: var(--cds-button-secondary,#393939);
+  color: var(--cds-text-on-color,#ffffff);
+  cursor: pointer;
+  min-width: 60px;
+  flex: 0 1 50%;
+  align-items: baseline;
+  margin: 0;
+  block-size: 4rem;
+  max-inline-size: none;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.modal-footer .modal-btn:first-of-type {
+  margin-right: 1px;
+}
+
+.modal-footer .modal-btn:hover {
+  color: var(--cds-text-on-color,#ffffff);
+  background-color: var(--cds-button-secondary-hover,#474747);
+}
+
+.modal-footer .modal-btn.primary {
+  background-color: var(--cds-button-primary,#0f62fe);
+  color: var(--cds-text-on-color,#ffffff);
+}
+
+.modal-footer .modal-btn.primary:hover {
+  color: var(--cds-text-on-color,#ffffff);
+  background-color: var(--cds-button-primary-hover,#0353e9);
+}
+
+.modal-close-btn {
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  padding: 0.75rem;
+  border: 2px solid transparent;
+  background-color: transparent;
+  block-size: 3rem;
+  cursor: pointer;
+  inline-size: 3rem;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  transition: background-color 110ms cubic-bezier(.2,0,.38,.9);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: black;
+}

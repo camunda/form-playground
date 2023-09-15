@@ -16,13 +16,7 @@
     <div class="playground"></div>
     <div class="status-bar">
       <div class="buttons">
-        <span class="execution-platform">Camunda Platform 8.0</span>
-        <button>
-          <svg viewBox="0 0 24 24">
-            <path d="M12,5 C15.8659932,5 19,8.13400675 19,12 C19,15.8659932 15.8659932,19 12,19 C8.13400675,19 5,15.8659932 5,12 C5,8.13400675 8.13400675,5 12,5 Z M9.33333333,8 L8,9.33333333 L10.667,12 L8,14.6666667 L9.33333333,16 L12,13.333 L14.6666667,16 L16,14.6666667 L13.333,12 L16,9.33333333 L14.6666667,8 L12,10.666 L9.33333333,8 Z"></path>
-          </svg>
-          0 problems
-        </button>
+        <span class="execution-platform">Camunda Platform 8</span>
       </div>
       <div class="buttons">
         <button class="design">
@@ -38,11 +32,41 @@
           Validate
         </button>
       </div>
-      <div class="buttons">
-        <span class="execution-platform">5.2.0</span>
-      </div>
     </div>
   </div>
+
+  <div id="upload-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-title">
+        <h2>Upload custom form component</h2>
+        <button class="modal-close-btn" title="Close modal">
+          <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true" width="20" height="20" viewBox="0 0 32 32" class="cds--modal-close__icon"><path d="M17.4141 16L24 9.4141 22.5859 8 16 14.5859 9.4143 8 8 9.4141 14.5859 16 8 22.5859 9.4143 24 16 17.4141 22.5859 24 24 22.5859 17.4141 16z"></path></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Select the corresponding etxension files.</p>
+
+        <div class="field-group">
+          <label for="renderExtension">Render extension</label><br/>
+          <input type="file" id="renderExtension" name="renderExtension" accept=".js">
+        </div>
+       
+        <div class="field-group">
+          <label for="propertiesPanelExtension">Properties panel extension</label><br/>
+          <input type="file" id="propertiesPanelExtension" name="propertiesPanelExtension" accept=".js">
+        </div>
+
+        <div class="field-group">
+          <label for="styles">Styles</label><br/>
+          <input type="file" id="styles" name="styles" accept=".css">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn modal-footer-close-btn">Cancel</button>
+        <button class="modal-btn modal-upload-btn primary">Upload</button>
+      </div>
+    </div>
+</div>
   <script src="app.js"></script>
 </body>
 
