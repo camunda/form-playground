@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "buid:styles": "copyfiles -f src/styles.css dist",
+    "build:styles": "copyfiles -f src/styles.css dist",
     "build:render": "webpack --config webpack.render.js",
     "build:propertiesPanel": "webpack --config webpack.propertiesPanel.js",
     "build:render:watch": "webpack --config webpack.render.js --watch",
     "build:propertiesPanel:watch": "webpack --config webpack.propertiesPanel.js --watch",
-    "build": "run-s buid:styles build:render build:propertiesPanel",
-    "build:watch": "run-p buid:styles build:render:watch build:propertiesPanel:watch"
+    "build": "run-s build:styles build:render build:propertiesPanel",
+    "build:watch": "run-p build:styles build:render:watch build:propertiesPanel:watch"
   },
   "repository": {
     "type": "git",
