@@ -6,12 +6,9 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
-## 0.9.0-alpha.1
+## 0.9.0
 
 * `FEAT`: set feel popup container ([11ae37b6](https://github.com/camunda/form-playground/commit/11ae37b662c70fb6fbee2d985989f8eac12fb7e2))
-
-## 0.9.0-alpha.0
-
 * `FEAT`: use `drag.*` events to set drop target styles ([#53](https://github.com/camunda/form-playground/issues/53))
 * `FEAT`: localized date picker based on browser language ([#733](https://github.com/bpmn-io/form-js/issues/733))
 * `FEAT`: added placeholder to playground input panel ([0f696119](https://github.com/bpmn-io/form-js/commit/0f6961191c076f8cc2d221428b2d7fdbab9a2fe3))
@@ -19,8 +16,10 @@ ___Note:__ Yet to be released changes appear here._
 * `FEAT`: added support for nested component keys ([#464](https://github.com/bpmn-io/form-js/issues/464))
 * `FIX`: dropdown options no longer reset when form reopens ([#764](https://github.com/bpmn-io/form-js/issues/764))
 * `FIX`: removed keying from buttons ([#778](https://github.com/bpmn-io/form-js/issues/778))
-* `DEPS`: update `properties-panel` to v3.3.0
-* `DEPS`: update `form-js` to 1.3.0-alpha.0
+* `FIX`: update options when expression evaluation changed ([#809](https://github.com/bpmn-io/form-js/issues/809))
+* `CHORE`: update schemaVersion to 11
+* `DEPS`: update `properties-panel` to v3.7.0
+* `DEPS`: update `form-js` to 1.3.0
 
 ## 0.8.0
 
