@@ -6,6 +6,12 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.1
+
+* `FIX`: cleanup FEEL popup editor lifecycle events
+* `DEPS`: update `properties-panel` to v3.8.0
+* `DEPS`: update `form-js` to 1.3.1
+
 ## 0.9.0
 
 * `FEAT`: set feel popup container ([11ae37b6](https://github.com/camunda/form-playground/commit/11ae37b662c70fb6fbee2d985989f8eac12fb7e2))
