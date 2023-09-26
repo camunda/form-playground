@@ -6,6 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.9.2
+
+_Republish of 0.9.1._
+
 ## 0.9.1
 
 * `FIX`: cleanup FEEL popup editor lifecycle events
