@@ -12,7 +12,10 @@ const DEFAULT_AXE_RULES = [
   'best-practice',
   'wcag2a',
   'wcag2aa',
-  'cat.semantics'
+  'wcag21a',
+  'wcag21aa',
+  'cat.semantics',
+  'cat.forms'
 ];
 
 export function isSingleStart(topic) {
