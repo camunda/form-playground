@@ -15,7 +15,6 @@ ___Note:__ Yet to be released changes appear here._
 * `FIX`: improve pallette visuals ([#539](https://github.com/bpmn-io/form-js/issues/539)) ([#848](https://github.com/bpmn-io/form-js/issues/848))
 * `FEAT`: implement separator form field ([#480](https://github.com/bpmn-io/form-js/issues/480))
 * `FEAT`: implement <formField.search> events ([#785](https://github.com/bpmn-io/form-js/issues/785))
-* `FEAT`: make it easier to navigate over tags in `taglist` component([#435](https://github.com/bpmn-io/form-js/issues/435))
 * `FEAT`: add focus and blur events ([#841](https://github.com/bpmn-io/form-js/pull/841))
 
 ## 0.9.2
