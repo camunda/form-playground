@@ -6,6 +6,13 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.10.1
+
+* `FIX`: clean up default value on options source change ([#859](https://github.com/bpmn-io/form-js/issues/859))
+* `FIX`: improve color contrast in input data placeholder ([#876](https://github.com/bpmn-io/form-js/pull/876))
+* `FIX`: add title to remove action ([#877](https://github.com/bpmn-io/form-js/pull/877))
+* `DEPS`: update `form-js` to 1.4.1
+
 ## 0.10.0
 
 * `DEPS`: update `form-js` to 1.4.0
