@@ -36,6 +36,6 @@
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "@bpmn-io/properties-panel": "^3.5.0"
+    "@bpmn-io/properties-panel": "^3.13.0"
   }
 }
