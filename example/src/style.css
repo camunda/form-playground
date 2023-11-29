@@ -81,7 +81,8 @@ html, body, .root {
   line-height: 28px;
 }
 
-.status-bar .execution-platform {
+.status-bar .execution-platform,
+.status-bar .branch-name {
   margin-top: 2px;
 }
 
