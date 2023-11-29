@@ -12,6 +12,9 @@ const container = document.querySelector('.playground');
 const designBtn = document.querySelector('.design');
 const validateBtn = document.querySelector('.validate');
 
+const branchNameNode = document.querySelector('.branch-name b');
+branchNameNode.textContent = process.env.BRANCH_NAME;
+
 const data = {
   creditor: 'John Doe Company',
   amount: 456,
