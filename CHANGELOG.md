@@ -6,6 +6,13 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.11.0
+
+* `FEAT`: added a new `form-json-schema` package ([6690d2e2](https://github.com/bpmn-io/form-js/commit/6690d2e2835bd95302577d567379e89451a3ac57))
+* `FEAT`: introduced new SASS stylesheets to move away from styled-components ([633](https://github.com/bpmn-io/form-js/issues/633))
+* `FEAT`: support iFrame component ([#887](https://github.com/bpmn-io/form-js/issues/887))
+* `DEPS`: update to feelin@2.3 & feelers@1.2, bringing in new FEEL functionality ([4765bb24](https://github.com/bpmn-io/form-js/commit/4765bb2408aed0c02ae77c0449ade7a195f64b04))
+
 ## 0.10.1
 
 * `FIX`: clean up default value on options source change ([#859](https://github.com/bpmn-io/form-js/issues/859))
