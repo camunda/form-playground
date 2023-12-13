@@ -6,6 +6,12 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.12.0
+
+* `FEAT`: add dynamic list component ([#796](https://github.com/bpmn-io/form-js/issues/796))
+* `FEAT`: add table component ([#888](https://github.com/bpmn-io/form-js/issues/888))
+* `DEPS`: update to feelin@3 ([0fdf5e19](https://github.com/bpmn-io/form-js/commit/0fdf5e19f45a614cb5cc123f9aa264003641634f))
+
 ## 0.11.0
 
 * `FEAT`: added a new `form-json-schema` package ([6690d2e2](https://github.com/bpmn-io/form-js/commit/6690d2e2835bd95302577d567379e89451a3ac57))
