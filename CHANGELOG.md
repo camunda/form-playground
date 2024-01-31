@@ -2,6 +2,14 @@
 
 All notable changes to [@camunda/form-playground](https://github.com/camunda/form-playground) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
+## Unreleased
+
+___Note:__ Yet to be released changes appear here._
+
+## 0.13.0-alpha.1
+
+* `FIX`: update to @bpmn-io/form-js@1.7.0-alpha.0
+
 ## 0.13.0-alpha.0
 
 * `FEAT`: implement HTML component and cleanup Text component ([#999](https://github.com/bpmn-io/form-js/pull/999))
