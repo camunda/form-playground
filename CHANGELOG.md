@@ -2,9 +2,13 @@
 
 All notable changes to [@camunda/form-playground](https://github.com/camunda/form-playground) are documented here. We use [semantic versioning](http://semver.org/) for releases.
 
-## Unreleased
+## 0.13.0-alpha.0
 
-___Note:__ Yet to be released changes appear here._
+* `FEAT`: implement HTML component and cleanup Text component ([#999](https://github.com/bpmn-io/form-js/pull/999))
+* `FIX`: repeatable entry parameters now validate with errors ([#1000](https://github.com/bpmn-io/form-js/pull/1000))
+* `FIX`: show iframe title in editor ([#991](https://github.com/bpmn-io/form-js/pull/991))
+* `FIX`: prevent demo data from being created on edited tables ([#1005](https://github.com/bpmn-io/form-js/pull/1005))
+* `DEPS`: update diagram-js and min-dash ([1660113](https://github.com/camunda/form-playground/commit/1660113b3a6f4f98f65b705deff6d8a72f052611))
 
 ## 0.12.0
 
