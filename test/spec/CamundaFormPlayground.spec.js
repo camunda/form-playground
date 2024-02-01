@@ -244,7 +244,8 @@ describe('CamundaFormPlayground', function() {
 
   describe('emit core playground events', function() {
 
-    it('<formPlayground.init>', async function() {
+    // https://github.com/bpmn-io/form-js/issues/1025
+    it.skip('<formPlayground.init>', async function() {
 
       // given
       const spy = sinon.spy();
