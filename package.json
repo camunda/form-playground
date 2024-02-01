@@ -54,7 +54,7 @@
     "mitt": "^3.0.1"
   },
   "devDependencies": {
-    "@bpmn-io/form-js": "^1.7.0-alpha.0",
+    "@bpmn-io/form-js": "^1.7.0",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@testing-library/preact": "^2.0.1",
@@ -93,7 +93,7 @@
     "webpack": "^5.89.0"
   },
   "peerDependencies": {
-    "@bpmn-io/form-js": "^1.7.0-alpha.0"
+    "@bpmn-io/form-js": "^1.7.0"
   },
   "sideEffects": [
     "*.css"
