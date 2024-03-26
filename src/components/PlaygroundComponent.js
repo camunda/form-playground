@@ -81,13 +81,15 @@ export function PlaygroundComponent(props) {
 
   // (1.1) pipe playground API
   useEffect(() => {
-    onInit({
-      ...playgroundRef.current,
-      collapse: this.collapse,
-      open: this.open,
+    playgroundRef.current.on('formPlayground.init', () => {
+      onInit({
+        ...playgroundRef.current,
+        collapse: this.collapse,
+        open: this.open,
 
-      // @pinussilvestrus: this is added for testing purposes
-      _ref: playgroundRef.current
+        // @pinussilvestrus: this is added for testing purposes
+        _ref: playgroundRef.current
+      });
     });
   }, []);
 
