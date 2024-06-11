@@ -216,12 +216,12 @@ export function PlaygroundComponent(props) {
           container.classList.contains('fjs-drop-container-horizontal') ||
           container.classList.contains('fjs-drop-container-vertical')
         ) {
-          rootRef.current.classList.add('cfp-dragging');
+          rootRef.current && rootRef.current.classList.add('cfp-dragging');
         }
       });
 
       editor.on('drag.out', function(event) {
-        rootRef.current.classList.remove('cfp-dragging');
+        rootRef.current && rootRef.current.classList.remove('cfp-dragging');
       });
     };
 
