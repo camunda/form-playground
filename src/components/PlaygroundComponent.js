@@ -73,7 +73,8 @@ export function PlaygroundComponent(props) {
       schema,
       editor: { inlinePropertiesPanel: false },
       propertiesPanel: {
-        feelPopupContainer: rootRef.current
+        feelPopupContainer: rootRef.current,
+        getDocumentationRef
       },
       ...restProps
     });
@@ -275,4 +276,17 @@ function createLayout(overrides) {
     ...DEFAULT_LAYOUT,
     ...overrides
   };
+}
+
+function getDocumentationRef(field) {
+
+  if (!field) {
+    return;
+  }
+
+  if (field.type === 'default') {
+    return 'https://docs.camunda.io/docs/components/modeler/forms/camunda-forms-reference/';
+  }
+
+  return `https://docs.camunda.io/docs/components/modeler/forms/form-element-library/forms-element-library-${field.type}/`;
 }
