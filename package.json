@@ -55,7 +55,7 @@
   },
   "devDependencies": {
     "@bpmn-io/form-js": "^1.9.0",
-    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-commonjs": "^26.0.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@testing-library/preact": "^3.2.3",
     "axe-core": "^4.8.2",
@@ -82,7 +82,7 @@
     "npm-run-all2": "^6.1.1",
     "puppeteer": "^22.0.0",
     "qs": "^6.11.2",
-    "rollup": "^3.0.0",
+    "rollup": "^4.0.0",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-css-only": "^4.5.2",
     "rollup-plugin-svg": "^2.0.0",
