@@ -6,6 +6,15 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.16.0
+
+* `FIX`: update to @bpmn-io/form-js@1.10.1
+
+## 0.15.0
+
+* `FIX`: update to @bpmn-io/form-js@1.9.0
+* `FIX`: fix: ensure rootRef.current isn't null [37a4a30](https://github.com/camunda/form-playground/commit/37a4a3074f9610e8ae906cab9436bdaede37b9f0)
+
 ## 0.14.0
 
 * `FIX`: update to @bpmn-io/form-js@1.8.1
