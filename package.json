@@ -92,7 +92,7 @@
     "webpack": "^5.94.0"
   },
   "peerDependencies": {
-    "@bpmn-io/form-js": "^1.10.1"
+    "@bpmn-io/form-js": "github:bpmn-io/form-js#new-diagram-js-binding"
   },
   "sideEffects": [
     "*.css"
