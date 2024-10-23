@@ -18,7 +18,7 @@
     "dev": "npm test -- --auto-watch --no-single-run",
     "prepare": "run-s build",
     "prepublishOnly": "run-s build",
-    "link-deps": "node tasks/link-deps.js"
+    "link-deps": "node tasks/link-deps.mjs"
   },
   "repository": {
     "type": "git",
@@ -67,7 +67,7 @@
     "del": "8.0.0",
     "eslint": "^8.54.0",
     "eslint-plugin-bpmn-io": "^1.0.1",
-    "execa": "^1.0.0",
+    "execa": "^9.4.1",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "^3.2.0",
     "karma-coverage": "^2.2.1",
@@ -98,6 +98,6 @@
     "*.css"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }

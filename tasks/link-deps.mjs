@@ -1,8 +1,12 @@
-const fs = require('fs');
-const { shellSync: exec } = require('execa');
-const { sync: del } = require('del');
-const path = require('path');
-const qs = require('qs');
+import fs from 'node:fs';
+import path, { dirname } from 'node:path';
+import { execaSync } from 'execa';
+import { fileURLToPath } from 'node:url';
+import { deleteSync } from 'del';
+import qs from 'qs';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const customLinkersMap = {
   'bpmn-io/form-js': linkFormJs
@@ -38,7 +42,7 @@ async function linkDependencies(dependencies) {
     return;
   }
 
-  del(dependenciesDir);
+  deleteSync(dependenciesDir);
   fs.mkdirSync(dependenciesDir);
 
   for (const dependency of dependencies) {
@@ -62,7 +66,7 @@ async function linkDependencies(dependencies) {
   * @param {Dependency} dependency
   */
 function linkFromGitHub({ repo, ref }) {
-  exec(`npm i ${repo}#${ref}`, { cwd: demoDir });
+  execaSync({ shell:true })(`npm i ${repo}#${ref}`, { cwd: demoDir });
 }
 
 /**
@@ -74,34 +78,34 @@ function linkFormJs({ repo, ref }) {
   console.log(`Cloned ${repo}.`);
 
   const rootDir = path.join(dependenciesDir, 'form-js');
-  exec(`git checkout ${ref}`, { cwd: rootDir });
+  execaSync({ shell:true })(`git checkout ${ref}`, { cwd: rootDir });
   console.log(`Checked out ${ref}.`);
 
-  exec('npm ci', { cwd: rootDir });
+  execaSync({ shell:true })('npm ci', { cwd: rootDir });
   console.log('Installed dependencies.');
 
-  exec('npm run build-distro', { cwd: rootDir });
+  execaSync({ shell:true })('npm run build-distro', { cwd: rootDir });
   console.log('Built distro.');
 
   // link form-js
   const formJsDir = path.join(rootDir, 'packages', 'form-js');
-  exec('yarn link', { cwd: formJsDir });
+  execaSync({ shell:true })('yarn link', { cwd: formJsDir });
 
-  exec('yarn link @bpmn-io/form-js', { cwd: demoDir });
+  execaSync({ shell:true })('yarn link @bpmn-io/form-js', { cwd: demoDir });
   console.log('Linked @bpmn-io/form-js.');
 
   // link form-js-playground
   const playgroundDir = path.join(rootDir, 'packages', 'form-js-playground');
-  exec('yarn link', { cwd: playgroundDir });
+  execaSync({ shell:true })('yarn link', { cwd: playgroundDir });
 
-  exec('yarn link @bpmn-io/form-js-playground', { cwd: demoDir });
+  execaSync({ shell:true })('yarn link @bpmn-io/form-js-playground', { cwd: demoDir });
   console.log('Linked @bpmn-io/form-js-playground.');
 }
 
 function gitClone(repo) {
   const repoUrl = getRepoUrl(repo);
 
-  exec(`git clone ${repoUrl}`, { cwd: dependenciesDir });
+  execaSync({ shell:true })(`git clone ${repoUrl}`, { cwd: dependenciesDir });
 }
 
 function getRepoUrl(repo) {
