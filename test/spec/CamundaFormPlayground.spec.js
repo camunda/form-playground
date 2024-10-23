@@ -162,9 +162,10 @@ describe('CamundaFormPlayground', function() {
   });
 
 
-  describe('#attachTo', async function() {
+  describe('#attachTo', function() {
 
     let parent;
+
     beforeEach(function() {
       parent = document.createElement('div');
       document.body.appendChild(parent);
