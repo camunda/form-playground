@@ -1,7 +1,0 @@
-{
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module"
-  },
-  "extends": ["plugin:bpmn-io/node", "plugin:bpmn-io/browser"]
-}
