@@ -6,6 +6,11 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
+## 0.17.0
+
+* `DEPS`: update to @bpmn-io/form-js@1.11.0
+* `DEPS`: migrate to eslint v9
+
 ## 0.16.1
 
 * `DEPS`: fix @bpmn-io/form-js peer dependency version
