@@ -27,20 +27,20 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@bpmn-io/form-js": "^1.7.0",
+    "@bpmn-io/form-js": "^1.11.0",
     "@camunda/form-playground": "file:..",
-    "@ibm/plex": "^6.1.0"
+    "@ibm/plex": "^6.4.1"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^12.0.0",
+    "copy-webpack-plugin": "^12.0.2",
     "cross-env": "^7.0.3",
-    "css-loader": "^7.0.0",
+    "css-loader": "^7.1.2",
     "del-cli": "^6.0.0",
     "npm-run-all2": "^7.0.0",
-    "serve": "^14.0.1",
+    "serve": "^14.2.4",
     "style-loader": "^4.0.0",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^5.0.0",
-    "webpack-dev-server": "^5.0.0"
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   }
 }
