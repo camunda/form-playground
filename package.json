@@ -99,7 +99,7 @@
   "sideEffects": [
     "*.css"
   ],
-  "engines": {
+  "devEngines": {
     "node": ">=22"
   }
 }
