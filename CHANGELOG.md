@@ -8,6 +8,10 @@ ___Note:__ Yet to be released changes appear here._
 
 ## 0.17.2
 
+* `CHORE`: remove `engines` to mute unnecessary Node version validation on install
+
+## 0.17.2
+
 * `DEPS`: update to @bpmn-io/form-js@1.11.2
 
 ## 0.17.1
