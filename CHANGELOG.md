@@ -6,7 +6,7 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ___Note:__ Yet to be released changes appear here._
 
-## 0.17.2
+## 0.17.3
 
 * `CHORE`: remove `engines` to mute unnecessary Node version validation on install
 
