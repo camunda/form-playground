@@ -36,7 +36,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^7.1.2",
     "del-cli": "^6.0.0",
-    "npm-run-all2": "^7.0.0",
+    "npm-run-all2": "^7.0.1",
     "serve": "^14.2.4",
     "style-loader": "^4.0.0",
     "webpack": "^5.95.0",
