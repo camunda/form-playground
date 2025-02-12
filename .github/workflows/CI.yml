@@ -30,13 +30,13 @@ jobs:
       - name: Setup project
         uses: bpmn-io/actions/setup@latest
       - name: Build
-        if: matrix.os == 'ubuntu-20.04'
+        if: matrix.os == 'ubuntu-latest'
         env:
           COVERAGE: 1
           TEST_BROWSERS: Firefox,ChromeHeadless
         run: xvfb-run npm run all
       - name: Build
-        if: matrix.os != 'ubuntu-20.04'
+        if: matrix.os != 'ubuntu-latest'
         env:
           TEST_BROWSERS: ChromeHeadless
         run: npm run all
