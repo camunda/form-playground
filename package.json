@@ -91,7 +91,7 @@
     "sinon": "^17.0.1",
     "sinon-chai": "^3.7.0",
     "style-loader": "^4.0.0",
-    "webpack": "^5.97.1"
+    "webpack": "^5.98.0"
   },
   "peerDependencies": {
     "@bpmn-io/form-js": "^1.10.3"
