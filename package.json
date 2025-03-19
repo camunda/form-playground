@@ -61,7 +61,7 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@testing-library/preact": "^3.2.4",
     "axe-core": "^4.10.3",
-    "babel-loader": "^9.2.1",
+    "babel-loader": "^10.0.0",
     "babel-plugin-istanbul": "^7.0.0",
     "chai": "^4.3.10",
     "cross-env": "^7.0.3",
