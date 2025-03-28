@@ -4,7 +4,11 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 ## Unreleased
 
-___Note:__ Yet to be released changes appear here._
+**\_Note:** Yet to be released changes appear here.\_
+
+## 0.21.1
+
+- `DEPS`: update to @bpmn-io/form-js@1.15.1
 
 ## 0.21.0
 
