@@ -11,6 +11,7 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 * `DEPS`: update to @bpmn-io/form-js@1.16.0
 * `DEPS`: bump puppeteer
 * `DEPS`: bump minor deps
+* `DEPS`: refresh lockfile
 
 ## 0.21.1
 
