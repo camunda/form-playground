@@ -14,7 +14,7 @@ import {
 
 import classNames from 'classnames';
 
-import { FormPlayground } from '@bpmn-io/form-js';
+import { FormPlayground, DocumentPreview, Checklist } from '@bpmn-io/form-js';
 
 import { CollapsiblePanel } from './CollapsiblePanel';
 import { CollapsedPreview } from './CollapsedPreview';
@@ -288,5 +288,10 @@ function getDocumentationRef(field) {
     return 'https://docs.camunda.io/docs/components/modeler/forms/camunda-forms-reference/';
   }
 
-  return `https://docs.camunda.io/docs/components/modeler/forms/form-element-library/forms-element-library-${field.type}/`;
+  const typeToDocsMap = {
+    [Checklist.config.type]: 'checkbox-group',
+    [DocumentPreview.config.type]: 'document-preview'
+  };
+
+  return `https://docs.camunda.io/docs/components/modeler/forms/form-element-library/forms-element-library-${typeToDocsMap[field.type] || field.type}/`;
 }
