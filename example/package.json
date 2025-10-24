@@ -27,7 +27,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@bpmn-io/form-js": "^1.16.0",
+    "@bpmn-io/form-js": "^1.18.0",
     "@camunda/form-playground": "file:..",
     "@ibm/plex": "^6.4.1"
   },
