@@ -9,6 +9,7 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 ## 0.23.0
 
 * `DEPS`: update to @bpmn-io/form-js@1.18.0
+* `DEPS`: bump dev deps
 
 ## 0.22.0
 
