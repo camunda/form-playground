@@ -1,3 +1,5 @@
+import { expect } from 'chai';
+
 import './test.css';
 
 import '@bpmn-io/form-js/dist/assets/form-js.css';
