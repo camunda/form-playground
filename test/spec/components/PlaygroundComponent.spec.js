@@ -1,3 +1,6 @@
+import { expect } from 'chai';
+import * as sinon from 'sinon';
+
 import 'preact/debug';
 
 import TestContainer from 'mocha-test-container-support';

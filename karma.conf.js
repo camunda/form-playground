@@ -19,8 +19,7 @@ module.exports = function(karma) {
 
     frameworks: [
       'webpack',
-      'mocha',
-      'sinon-chai'
+      'mocha'
     ],
 
     files: [
@@ -54,6 +53,10 @@ module.exports = function(karma) {
       },
       module: {
         rules: [
+          {
+            test: /test\/globals\.js$/,
+            sideEffects: true
+          },
           {
             test: /\.css$/i,
             use: [
