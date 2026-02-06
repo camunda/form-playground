@@ -6,7 +6,7 @@ jobs:
       matrix:
         # macos-latest removed due to unknown bug when running npm run link-deps. The issue doesn't happen locally, only on GitHub Actions.
         os: [ubuntu-latest, windows-latest]
-        node-version: [22]
+        node-version: [24]
 
     runs-on: ${{ matrix.os }}
 
