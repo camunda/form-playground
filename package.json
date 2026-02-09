@@ -65,11 +65,11 @@
     "babel-plugin-istanbul": "^7.0.1",
     "chai": "^4.3.10",
     "cross-env": "^10.1.0",
-    "css-loader": "^7.1.2",
+    "css-loader": "^7.1.3",
     "del": "8.0.1",
     "eslint": "^9.38.0",
     "eslint-plugin-bpmn-io": "^2.2.0",
-    "execa": "^9.6.0",
+    "execa": "^9.6.1",
     "karma": "^6.4.4",
     "karma-chrome-launcher-2": "^3.3.0",
     "karma-coverage": "^2.2.1",
@@ -84,14 +84,14 @@
     "npm-run-all2": "^8.0.4",
     "puppeteer": "^24.14.0",
     "qs": "^6.14.0",
-    "rollup": "^4.52.5",
+    "rollup": "^4.57.1",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-css-only": "^4.5.5",
     "rollup-plugin-svg": "^2.0.0",
     "sinon": "^17.0.1",
     "sinon-chai": "^3.7.0",
     "style-loader": "^4.0.0",
-    "webpack": "^5.102.1"
+    "webpack": "^5.105.0"
   },
   "peerDependencies": {
     "@bpmn-io/form-js": "^1.10.3"
