@@ -46,15 +46,18 @@
     }
   ],
   "license": "MIT",
+  "overrides": {
+    "preact": "10.15.1"
+  },
   "dependencies": {
     "classnames": "^2.5.1",
-    "diagram-js": "^15.9.0",
+    "diagram-js": "^15.18.0",
     "min-dash": "^5.0.0",
     "min-dom": "^5.2.0",
     "mitt": "^3.0.1"
   },
   "devDependencies": {
-    "@bpmn-io/form-js": "^1.19.0",
+    "@bpmn-io/form-js": "^1.23.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.38.0",
     "@rollup/plugin-commonjs": "^29.0.0",
