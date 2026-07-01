@@ -45,12 +45,14 @@ describe('CamundaFormPlayground', function() {
     container = TestContainer.get(this);
   });
 
-  !singleStart && afterEach(function() {
-    if (playground) {
-      playground.destroy();
-      playground = null;
-    }
-  });
+  if (!singleStart) {
+    afterEach(function() {
+      if (playground) {
+        playground.destroy();
+        playground = null;
+      }
+    });
+  }
 
 
   (singleStart ? it.only : it)('should render', async function() {
