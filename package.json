@@ -57,7 +57,7 @@
     "mitt": "^3.0.1"
   },
   "devDependencies": {
-    "@bpmn-io/form-js": "^1.24.0",
+    "@bpmn-io/form-js": "^2.0.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.38.0",
     "@rollup/plugin-commonjs": "^29.0.0",
@@ -96,7 +96,7 @@
     "webpack": "^5.106.2"
   },
   "peerDependencies": {
-    "@bpmn-io/form-js": "^1.10.3"
+    "@bpmn-io/form-js": "^2.0.0"
   },
   "sideEffects": [
     "*.css"
