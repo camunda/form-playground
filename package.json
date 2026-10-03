@@ -47,7 +47,7 @@
   ],
   "license": "MIT",
   "overrides": {
-    "preact": "10.15.1"
+    "preact": "10.29.8"
   },
   "dependencies": {
     "classnames": "^2.5.1",
