@@ -241,7 +241,7 @@ export function PlaygroundComponent(props) {
   // (6) render
   return html`
     <${LayoutContext.Provider} value=${ layoutContext }>
-    <div ref=${rootRef} class="${classNames('cfp-root', { 'cfp-open-preview': previewOpen })}">
+    <div ref=${rootRef} class="${classNames('cfp-root', 'bio-theme-parent', { 'cfp-open-preview': previewOpen })}">
       <div class="cfp-palette" ref=${ paletteContainerRef }></div>
       <div class="cfp-left">
         <${CollapsiblePanel} idx="${ FORM_DEFINITION_IDX }" title="Form Definition">

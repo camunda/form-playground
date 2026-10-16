@@ -1,40 +1,28 @@
+/**
+ * Semantic tokens, copied from `@bpmn-io/theme` to style the components
+ * according to this theme.
+ *
+ * Names and values of the tokens should stay intact with the `@bpmn-io/theme`
+ * source of truth, to ensure matching styles and allow overrides with an
+ * alternative theme.
+ */
+.bio-theme-parent {
+  --bio-surface: hsl(0, 0%, 100%);
+  --bio-surface-medium: hsl(225, 10%, 95%);
+  --bio-surface-strong: hsl(225, 10%, 90%);
+  --bio-text-subtle: hsl(225, 10%, 35%);
+  --bio-border: hsl(225, 10%, 75%);
+  --bio-border-subtle: hsl(225, 10%, 85%);
+  --bio-neutral-subtle: hsl(225, 10%, 80%);
+}
+
 .cfp-root {
-  --color-grey-225-10-15: hsl(225, 10%, 15%);
-  --color-grey-225-10-35: hsl(225, 10%, 35%);
-  --color-grey-225-10-55: hsl(225, 10%, 55%);
-  --color-grey-225-10-75: hsl(225, 10%, 75%);
-  --color-grey-225-10-80: hsl(225, 10%, 80%);
-  --color-grey-225-10-85: hsl(225, 10%, 85%);
-  --color-grey-225-10-90: hsl(225, 10%, 90%);
-  --color-grey-225-10-93: hsl(225, 10%, 93%);
-  --color-grey-225-10-95: hsl(225, 10%, 95%);
-  --color-grey-225-10-97: hsl(225, 10%, 97%);
-
-  --color-blue-205-100-45: hsl(205, 100%, 45%);
-  --color-blue-205-100-50: hsl(205, 100%, 50%);
-  --color-blue-205-100-80: hsl(205, 100%, 80%);
-  --color-blue-205-100-95: hsl(205, 100%, 95%);
-
-  --color-green-150-86-44: hsl(150, 86%, 44%);
-
-  --color-red-360-100-40: hsl(360, 100%, 40%);
-  --color-red-360-100-45: hsl(360, 100%, 45%);
-  --color-red-360-100-92: hsl(360, 100%, 92%);
-  --color-red-360-100-97: hsl(360, 100%, 97%);
-
-  --color-white: hsl(0, 0%, 100%);
-  --color-black: hsl(0, 0%, 0%);
-
-  --border-color: var(--color-grey-225-10-85);
-  --background-color: var(--color-grey-225-10-95);
-  --palette-background-color: var(--color-grey-225-10-95);
-  --properties-background-color: var(--color-grey-225-10-97);
-  --properties-group-background-color: var(--color-grey-225-10-97);
-  --properties-input-background-color: var(--color-white);
-  --properties-arrow-hover-background-color: var(--color-grey-225-10-90);
-  --container-background-color: var(--color-white);
-  --cm-background-color: var(--color-white);
-  --drag-container-border-color: var(--color-grey-225-10-80);
+  --border-color: var(--bio-border-subtle);
+  --background-color: var(--bio-surface-medium);
+  --palette-background-color: var(--bio-surface-medium);
+  --container-background-color: var(--bio-surface);
+  --cm-background-color: var(--bio-surface);
+  --drag-container-border-color: var(--bio-border);
 
   --form-container-max-width: 1200px;
   --collapsible-cursor: default;
@@ -187,14 +175,7 @@
 
 .cfp-root .cfp-properties .fjs-properties-container {
   --properties-panel-width: 300px;
-  --color-properties-container-background: var(--properties-background-color);
   border-left: none !important;
-}
-
-.cfp-root .cfp-properties .bio-properties-panel {
-  --input-background-color: var(--properties-input-background-color);
-  --group-background-color: var(--properties-group-background-color);
-  --arrow-hover-background-color: var(--properties-arrow-hover-background-color);
 }
 
 /* mitigate low contrast: https://github.com/bpmn-io/cm-theme/issues/4 */
