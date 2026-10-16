@@ -6,6 +6,8 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 **\_Note:** Yet to be released changes appear here.\_
 
+* `FEAT`: source color variables from `@bpmn-io/theme`. The `--color-*` palette and `--properties-*` variables are removed. Override the `--bio-*` tokens instead. ([#205](https://github.com/camunda/form-playground/pull/205))
+
 ## 0.27.0
 
 * `DEPS`: update to `@bpmn-io/form-js@2.0.0`

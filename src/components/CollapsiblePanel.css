@@ -1,9 +1,9 @@
 .cfp-root {
-  --collapsible-border-color: var(--color-grey-225-10-85);
-  --collapsible-title-background-color: var(--color-grey-225-10-95);
-  --collapsible-action-fill-color: var(--color-grey-225-10-35);
-  --collapsible-title-hover-action-background-color: var(--color-grey-225-10-85);
-  --collapsible-action-hover-background-color: var(--color-grey-225-10-80);
+  --collapsible-border-color: var(--bio-border-subtle);
+  --collapsible-title-background-color: var(--bio-surface-medium);
+  --collapsible-action-fill-color: var(--bio-text-subtle);
+  --collapsible-title-hover-action-background-color: var(--bio-surface-strong);
+  --collapsible-action-hover-background-color: var(--bio-neutral-subtle);
 }
 
 .cfp-collapsible-panel {
