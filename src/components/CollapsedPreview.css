@@ -1,8 +1,8 @@
 .cfp-root {
-  --collapsed-preview-background-color: var(--color-grey-225-10-95);
-  --collapsed-preview-action-fill-color: var(--color-grey-225-10-35);
-  --collapsed-preview-hover-action-background-color: var(--color-grey-225-10-85);
-  --collapsed-preview-action-hover-background-color: var(--color-grey-225-10-80);
+  --collapsed-preview-background-color: var(--bio-surface-medium);
+  --collapsed-preview-action-fill-color: var(--bio-text-subtle);
+  --collapsed-preview-hover-action-background-color: var(--bio-surface-strong);
+  --collapsed-preview-action-hover-background-color: var(--bio-neutral-subtle);
   --collapsed-preview-cursor: var(--collapsible-cursor);
 }
 

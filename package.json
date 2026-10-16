@@ -8,11 +8,12 @@
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "all": "run-s lint test build",
+    "all": "run-s lint lint:theme test build",
     "test": "karma start",
     "build": "rollup -c --failAfterWarnings --bundleConfigAsCjs",
     "build:watch": "rollup -cw --bundleConfigAsCjs",
     "lint": "eslint .",
+    "lint:theme": "bpmn-io-theme-validate src/components/PlaygroundComponent.css",
     "start": "run-p build:watch start:example",
     "start:example": "npm start --workspace=example",
     "dev": "npm test -- --auto-watch --no-single-run",
@@ -58,6 +59,7 @@
   },
   "devDependencies": {
     "@bpmn-io/form-js": "^2.0.0",
+    "@bpmn-io/theme": "^0.3.0",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.38.0",
     "@rollup/plugin-commonjs": "^29.0.0",
