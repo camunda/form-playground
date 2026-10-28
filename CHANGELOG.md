@@ -6,6 +6,8 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 **\_Note:** Yet to be released changes appear here.\_
 
+* `FIX`: select rows via `.fjs-layout-row` instead of the `cds--*` grid classes, which form-js stops rendering
+
 ## 0.28.0
 
 * `FEAT`: source color variables from `@bpmn-io/theme`. The `--color-*` palette and `--properties-*` variables are removed. Override the `--bio-*` tokens instead. ([#205](https://github.com/camunda/form-playground/pull/205))
