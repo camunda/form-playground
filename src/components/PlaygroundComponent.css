@@ -118,7 +118,7 @@
   flex-direction: column;
 }
 
-.cfp-root .fjs-container .cds--grid .cds--row {
+.cfp-root .fjs-container .fjs-layout-row {
   margin-left: -1rem;
   margin-right: -1rem;
 }
