@@ -6,7 +6,10 @@ All notable changes to [@camunda/form-playground](https://github.com/camunda/for
 
 **\_Note:** Yet to be released changes appear here.\_
 
+## 0.28.1
+
 * `FIX`: select rows via `.fjs-layout-row` instead of the `cds--*` grid classes, which form-js stops rendering
+* `DEPS`: update to `@bpmn-io/form-js@2.2.0`
 
 ## 0.28.0
 
